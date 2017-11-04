@@ -1,6 +1,5 @@
 ## MAIN FILE
 
-
 init:
     $ mcname = ""
 
@@ -24,6 +23,7 @@ label start:
 
 label start2:
     mc "I'm the main character"
+    jump barry.meet
     return
 
 label nameChara:
