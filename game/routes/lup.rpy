@@ -122,11 +122,13 @@ label .meet:
                         
                         "You laugh. Lup seems really nice? She’s just radiating this awesome vibe. You could see yourself getting to know her better."
                         
+                        mc "I try my best. Anyway, Good luck finding him! I hope that you catch him quickly."
+                        
                         jump goodside
                         
                     label goodluck:
                     
-                        mc "I try my best. Anyway, Good luck finding him! I hope that you catch him quickly."
+                        mc "Good luck finding him! I hope that you catch him quickly."
                         
                         lup "Me too, Hombre. Catch you later!"
                         
@@ -182,6 +184,8 @@ label .meet:
                     
                     
             label whatdid:
+                
+                mc "Why? What did he even do?"
                 
                 lup "Listen, thug. At this point it’s not of your damn business. If you see his sorry ass? Tell him “Lup’s coming. And when she finds you? Your ass is grass.”"
                 
