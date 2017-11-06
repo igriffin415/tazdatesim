@@ -102,6 +102,8 @@ label .meet:
                     
                     #sprite: lup laugh
                     
+                    "Lup chuckles as you make a only-half-jokingly seductive face and waggle your eyebrows."
+                    
                     lup "You seem cool, TERM OF ENDEARMENT. Maybe I’ll see you around?"
                     
                     menu:
@@ -123,6 +125,12 @@ label .meet:
                         "You laugh. Lup seems really nice? She’s just radiating this awesome vibe. You could see yourself getting to know her better."
                         
                         mc "I try my best. Anyway, Good luck finding him! I hope that you catch him quickly."
+                        
+                        lup "Me too, Hombre. Catch you later!"
+                        
+                        "And with a quick wave, she’s gone. Lost in the sea of people that moved around you."
+                        
+                        "It’s too bad she had to leave so quickly. You really enjoyed that chat."
                         
                         jump goodside
                         
