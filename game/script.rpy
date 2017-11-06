@@ -55,7 +55,7 @@ label start2:
     "{i}Thank god I got the bags with wheels,{/i} you think to yourself, hopping over the curb and…"
 
     
-    jump lup.meet
+    jump lupmeet.meet
     
     #after all lup meeting choices
     
