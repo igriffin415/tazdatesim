@@ -16,13 +16,6 @@ init:
     define angus = Character("Angus")
     define unknown = Character("????")
 
-    #SPRITES
-    image lupPlaceholder = "Lup_Sprite_Neutral.png"
-
-    #BACKGROUNDS
-    image collegePlaceholder = "College_Entrance_BG.png"
-    image cabPlaceholder = "Cab_Interior_BG.png"
-
 
 # The game starts here.
 label start:
@@ -33,7 +26,7 @@ label start2:
     #bg: cab interior
     #sprite: none
 
-    scene cabPlaceholder with dissolve
+    scene bg cab with dissolve
 
     mc "Well. This is it I guess. First week at COLLEGE NAME? Let's make it a good one."
 
@@ -46,14 +39,13 @@ label start2:
     #bg: campus entrance
     #sprite: none
 
-    scene collegePlaceholder with dissolve
+    scene bg college
 
     "Stepping out of the car into the breeze, you can smell the faint smell of salt and fish on the breeze. You had forgotten that this was a beach town. That’d be nice in the summer, at least."
 
     "The cab driver pops the trunk with a Click!, and you lift your bags out from the recess and heft the messenger bag over your head and onto your shoulder."
 
     "{i}Thank god I got the bags with wheels,{/i} you think to yourself, hopping over the curb and…"
-
 
     jump lupmeet.meet
 
