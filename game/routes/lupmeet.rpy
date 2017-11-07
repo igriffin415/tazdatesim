@@ -4,7 +4,7 @@ label .meet:
         #bg: campus entrance
         #sprite: lup serious
 
-        scene collegePlaceholder
+        scene bg college
         show lupPlaceholder at right
 
         "Out of nowhere there’s a girl. And she’s in your face. And she’s asking you a very insistent question."
