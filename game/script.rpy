@@ -61,7 +61,9 @@ label start2:
 
         "Arcana Hall… Interesting. You can see Roost Hall in the distance and an huge building with a very large dome sitting atop it. You have no idea what that building is used for but the dome is cool. Looks like there’s a mural on it from here."
 
-        "Oh! Nestled into the corner of Roost Hall is a library. You’re probably going to spend a ton of time in there; you can’t work on your homework unless you’re in that kind of environment. You get too distracted. You’ll probably check that out once you settle into your dorm. "
+        "Oh! Nestled into the corner of Roost Hall is a library. You’re probably going to spend a ton of time in there; you can’t work on your homework unless you’re in that kind of environment. You get too distracted."
+
+        "You’ll probably check that out once you settle into your dorm. Gotta focus on that first."
 
     return
 
