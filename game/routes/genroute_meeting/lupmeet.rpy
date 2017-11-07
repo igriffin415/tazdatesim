@@ -5,7 +5,7 @@ label .meet:
         #sprite: lup serious
 
         scene bg college
-        show lupPlaceholder at right with dissolve
+        show lup neutral at right with dissolve
 
         "Out of nowhere there’s a girl. And she’s in your face. And she’s asking you a very insistent question."
 
@@ -128,7 +128,7 @@ label .meet:
 
                         lup "Me too, Hombre. Catch you later!"
 
-                        hide lupPlaceholder with dissolve
+                        hide lup neutral with dissolve
 
                         "And with a quick wave, she’s gone. Lost in the sea of people that moved around you."
 
@@ -142,7 +142,7 @@ label .meet:
 
                         lup "Me too, Hombre. Catch you later!"
 
-                        hide lupPlaceholder with dissolve
+                        hide lup neutral with dissolve
 
                         "And with a quick wave, she’s gone. Lost in the sea of people that moved around you."
 
@@ -210,7 +210,7 @@ label .meet:
                 jump badside
 
             label badside:
-                hide lupPlaceholder with dissolve
+                hide lup neutral with dissolve
 
                 "And with that, she angrily bumps past you, disappearing into the sea of people."
 
