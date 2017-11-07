@@ -47,9 +47,15 @@ label start2:
 
     "{i}Thank god I got the bags with wheels,{/i} you think to yourself, hopping over the curb and…"
 
+<<<<<<< HEAD
 
     jump lup.meet
 
+=======
+    
+    jump lupmeet.meet
+    
+>>>>>>> d3e3f94270cae8b8f8c9e708cc70fde0da5442b4
     #after all lup meeting choices
 
     label finddorm:
