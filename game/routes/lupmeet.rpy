@@ -1,4 +1,4 @@
-label lup:
+label lupmeet:
 
 label .meet:
         #bg: campus entrance
@@ -128,6 +128,8 @@ label .meet:
                         
                         lup "Me too, Hombre. Catch you later!"
                         
+                        hide lupPlaceholder
+                        
                         "And with a quick wave, she’s gone. Lost in the sea of people that moved around you."
                         
                         "It’s too bad she had to leave so quickly. You really enjoyed that chat."
@@ -139,6 +141,8 @@ label .meet:
                         mc "Good luck finding him! I hope that you catch him quickly."
                         
                         lup "Me too, Hombre. Catch you later!"
+                        
+                        hide lupPlaceholder
                         
                         "And with a quick wave, she’s gone. Lost in the sea of people that moved around you."
                         
@@ -206,6 +210,7 @@ label .meet:
                 jump badside
                 
             label badside:
+                hide lupPlaceholder
                 
                 "And with that, she angrily bumps past you, disappearing into the sea of people."
                 
