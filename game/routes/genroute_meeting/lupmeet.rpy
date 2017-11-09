@@ -167,6 +167,8 @@ label .meet:
                 #sprite: lup relaxed
 
                 lup "No sweat! If you see him though? Tell him “When Lup finds you, your ass is grass.”"
+                
+                hide lup neutral
 
                 "And with that, “Lup” disappears into the sea of people. {i}What a strange person. I pity Greg for whatever the hell he did.{/i}"
 
