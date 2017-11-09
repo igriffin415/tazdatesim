@@ -210,7 +210,7 @@ label .meet:
                 jump badside
 
             label badside:
-                hide lup neutral
+                hide lup neutral with dissolve
 
                 "And with that, she angrily bumps past you, disappearing into the sea of people."
 
@@ -223,6 +223,7 @@ label .meet:
                 jump finddorm
 
             label goodside:
+                hide lup neutral with dissolve
 
                 "You pull out your wallet to take the map out of the billfold."
 
