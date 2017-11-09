@@ -5,7 +5,7 @@ label .meet:
         #sprite: lup serious
 
         scene bg college
-        show lup neutral at right with dissolve
+        show lup neutral at right
 
         "Out of nowhere there’s a girl. And she’s in your face. And she’s asking you a very insistent question."
 
@@ -128,7 +128,7 @@ label .meet:
 
                         lup "Me too, Hombre. Catch you later!"
 
-                        hide lup neutral with dissolve
+                        hide lup neutral
 
                         "And with a quick wave, she’s gone. Lost in the sea of people that moved around you."
 
@@ -142,7 +142,7 @@ label .meet:
 
                         lup "Me too, Hombre. Catch you later!"
 
-                        hide lup neutral with dissolve
+                        hide lup neutral
 
                         "And with a quick wave, she’s gone. Lost in the sea of people that moved around you."
 
@@ -210,7 +210,7 @@ label .meet:
                 jump badside
 
             label badside:
-                hide lup neutral with dissolve
+                hide lup neutral
 
                 "And with that, she angrily bumps past you, disappearing into the sea of people."
 
@@ -218,7 +218,7 @@ label .meet:
 
                 "Might as well just head to your room. You pull out your wallet to take the map out of the billfold, and…"
 
-                "Fuck. You’re missing $15?!? It couldn’t have been Lup, you would have noticed. Probably just fell out on the trip here."
+                "Fuck. You’re missing 15$?!? It couldn’t have been Lup, you would have noticed. Probably just fell out on the trip here."
 
                 jump finddorm
 
