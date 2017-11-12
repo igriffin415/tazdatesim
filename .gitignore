@@ -3,4 +3,5 @@
 log.txt
 game/saves/*.save
 game/saves/persistent
-
+errors.txt
+traceback.txt

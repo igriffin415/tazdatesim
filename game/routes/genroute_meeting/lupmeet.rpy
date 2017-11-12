@@ -1,6 +1,13 @@
+
 label lupmeet:
 
 label .meet:
+        python:
+            points = 0 #i /think/ we might be able to say lupmeet.meet.$points in order to access this from a diff file
+            posAnswer = 3
+            neutAnswer = 0
+            negAnswer = -3
+
         #bg: campus entrance
         #sprite: lup serious
 
@@ -29,7 +36,8 @@ label .meet:
 
 
         label nope:
-
+            python:
+                points += neutAnswer
             #sprite: lup distrusting
 
             mc "I haven't."
@@ -53,6 +61,8 @@ label .meet:
 
 
             label coursenot:
+                python:
+                    points += posAnswer
 
                 mc "No sorry, I actually just got here? I’m not even sure who that is. What did he do?"
 
@@ -62,7 +72,7 @@ label .meet:
 
                 mc "I'm [mcname]!"
 
-                lup "Anyway~, Greg Grimaldis borrowed 15 bucks from me. I’m a nice person. He needed the cash, I gave him it. That wouldn’t be a problem! Except now the motherfucker is refusing to pay me back."
+                lup "Anyway~, Greg Grimaldis borrowed 15 bucks from me. I’m a nice person. He needed the cash, I gave it to him. That wouldn’t be a problem! Except now the motherfucker is refusing to pay me back."
 
                 mc "Well that’s shitty of him."
 
@@ -85,6 +95,8 @@ label .meet:
                         jump flirt
 
                 label ignore:
+                    python:
+                        points += neutAnswer
 
                     "You decide to ignore that. Probably better in the long run. She seems WAY out of your league."
 
@@ -97,6 +109,8 @@ label .meet:
                     jump goodside
 
                 label flirt:
+                    python:
+                        points += posAnswer
 
                     mc "And how could I go about getting one of those “third dates”..?"
 
@@ -115,6 +129,8 @@ label .meet:
                             jump goodluck
 
                     label help:
+                        python:
+                            points += posAnswer
 
                         mc "Maybe I could help you look for him after I get my things to my dorm? If I could figure out where that is…"
 
@@ -137,6 +153,8 @@ label .meet:
                         jump goodside
 
                     label goodluck:
+                        python:
+                            points += neutAnswer
 
                         mc "Good luck finding him! I hope that you catch him quickly."
 
@@ -161,7 +179,8 @@ label .meet:
 
 
             label no:
-
+                python:
+                    points += neutAnswer
                 mc "No?"
 
                 #sprite: lup relaxed
@@ -181,7 +200,8 @@ label .meet:
             jump badchoice
 
         label badchoice:
-
+            python:
+                points += negAnswer
             #sprite: lup distrusting
 
             "Her eyes narrow."
@@ -213,6 +233,8 @@ label .meet:
 
             label badside:
                 hide lup neutral with dissolve
+                #for debugging:
+                "You have %(points)d points"
 
                 "And with that, she angrily bumps past you, disappearing into the sea of people."
 
@@ -220,12 +242,14 @@ label .meet:
 
                 "Might as well just head to your room. You pull out your wallet to take the map out of the billfold, and…"
 
-                "Fuck. You’re missing 15$?!? It couldn’t have been Lup, you would have noticed. Probably just fell out on the trip here."
+                "Fuck. You’re missing $15?!? It couldn’t have been Lup, you would have noticed. Probably just fell out on the trip here."
 
                 jump finddorm
 
             label goodside:
                 hide lup neutral with dissolve
+                #for debugging
+                "You have %(points)d points"
 
                 "You pull out your wallet to take the map out of the billfold."
 
