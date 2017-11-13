@@ -6,34 +6,36 @@ label .meet:
             posAnswer = 3
             neutAnswer = 0
             negAnswer = -3
+            wtf = False
 
         #bg library hallway
         scene bg hallway
         #show magnus neutral at right
-        "As you leave the library, you notice a muffled buzzing sound... it sounds like it’s coming from down the hall to your left."
+        "Lucretia sure was something. Smart but, kinda reserved? You wonder to yourself what it might take to get her out of her shell a bit, but a sudden buzzing coming from Roost Hall distracts you."
 
-        "Following the sound, you head down the hallway, into what a sign assures you is ‘Roost Hall’. The hall is well lit and warm, decorated with a variety of wood, metal and stone art pieces."
+        "It fades suddenly. It was coming from Roost Hall? The place seems interesting; lots of people are walking in and out. The hall is well lit and warm, decorated with a variety of wood, metal and stone art pieces."
 
         "There are quite a few people bustling up and down the corridor, entering rooms that are alive with laughter and creation. The building seems to be home to a variety of trades, from the signs: metalworking, carpentry, electrics...the list goes on."
 
-        "The buzzing you heard leads you to the woodworking workshop."
-        scene bg roost
-        "Opening the door a sliver, you see the buzzing is coming from a young woman in  goggles and ear protectors operating some kind of saw. There’s an older man as well, who appears to be varnishing a cabinet in a nice cherry."
+        "{i}What the-?{/i} Curiosity gets the better of you as you gently push open the classroom door."
 
-        "Neither of them seem to have noticed you yet. They both appear very intent on their tasks, to the point of shutting out the world around-"
+        scene bg roost
+        "Opening the door a sliver, you see the buzzing is coming from a young woman in goggles and ear protectors operating some kind of saw. There’s an older man as well, who appears to be varnishing a cabinet in a nice cherry."
+
+        "Neither of them seem to have noticed you yet. They both appear very intent on their tasks, to the point of shutting out the world around them, and you-"
 
         show magnus neutral at right
         unknown "MAGNUS!!"
 
-        mc "What the -"
+        mc "{i}What the -{/i}"
 
         menu:
 
-            "{i}Flight{/i}":
-                call flight
-
             "{i}Fight{/i}":
                 call fight
+
+            "{i}Flight{/i}":
+                call flight
 
             "{i}Freak out{/i}":
                 call freak
@@ -45,35 +47,57 @@ label .meet:
 
         steven "Honestly. You’re a walking health and safety violation."
 
+        "Magnus laughs. Steven does not. Suddenly he turns to direct his ire to you."
+
+        #show magnus happy; show steven stern
+
+        steven "If you’re going to loiter put some safety glasses on. If you take an eye out, it’s not going to be on my watch."
+
+        "You mumble an affirming greeting and grab a pair out of the bucket next to the door. There. Nothing can kill you now. While you wear these glasses you are invincible."
+
+        "Or at least, shit won’t fly into your eyes, you guess. "
+
         hide steven
 
         "As the older man goes back to his work, Magnus turns back to you with a grin on his face."
 
         menu:
-            "What the hell?":
-                call wtf
 
             "Health and Safety, hm?":
                 call HaS
 
-        menu:
+            "What the hell?":
+                call wtf
 
-            "{i}Tell him.{/i}":
-                call tellname
 
-            "{i}No way!{/i}":
-                call noname
+        if(wtf):
+            menu:
 
-            "{i}Health and Safety Inspector{/i}":
-                call inspector
+                "{i}Tell him.{/i}":
+                    call tellname
+
+                "{i}No way!{/i}":
+                    call noname
+
+        else:
+            menu:
+
+                "{i}Tell him.{/i}":
+                    call tellname
+
+                "{i}No way!{/i}":
+                    call noname
+
+                "{i}Health and Safety Inspector{/i}":
+                    call inspector
 
         magnus "Nice to meet you, [mcname]! I haven’t seen you around here before, are you a new student? You interested in woodworking at all?"
 
-        mc "No, I was just looking for the source of that buzzing sound from the machine over there."
+        mc "I'm brand new here actually. I was just looking for the source of that buzzing sound from the machine over there."
 
         magnus "Oh, that’s just Jules. Julia!"
 
-        "You notice that the whirring buzz that filled the room has stopped, and the woman who was manning the buzz saw is coming towards you, both ear protectors and goggles in hand. She’s got a remarkable resemblance to Steven--maybe they’re related?"
+        "You notice that the whirring buzz that filled the room has stopped, and the woman who was manning the buzz saw is coming towards you, both ear protectors and goggles in hand. She’s got a remarkable resemblance to Steven -- maybe they’re related?"
 
         show julia neutral at left
 
@@ -107,15 +131,26 @@ label .meet:
 
         "{i}She gestures to Steven.{/i}"
 
-        #magnus " [If positive/neutral] (grins) Yeah! See you, [Y/N]. [If negative] (neutral expression) Yeah. See you." #will figure out if statements in morning lmao
+        if(points>=0):
+            show magnus happy
+            magnus "Yeah! See you, [mcname]."
+
+        else:
+            show magnus neutral
+            magnus "Yeah. See you."
 
         hide julia
         hide magnus
         "With a wave, they head back into the workshop, leaving you to continue exploring the campus."
 
-        return 
+        #for debugging
+        "You have %(points)d points"
+
+        return
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         label flight:
+
+            $points += neutAnswer
 
             "You turn and make a break for it without missing a beat. Scrambling away, you fail to notice the slight elevation of the doorway and fall backwards, landing on your back."
 
@@ -123,36 +158,54 @@ label .meet:
 
             unknown "Sorry, sorry! Didn’t mean to scare ya so badly!"
 
-            "Grumbling, you look up to see the person who startled you for the first time. ...Woah. {i}Muscles{/i}."
+            "Ow. You sit up slowly, that's going to smart tomorrow morning."
+
+            "Jeez, that was embarrassing.  You sheepishly look up at the person who startled you for the first time."
+
+            "...Woah. {i}Muscles{/i}."
 
             return
 
         label freak:
 
+            $points += neutAnswer
+
+            "Nope. Nope nope nope. This is not what you signed up for today. Your brain takes over and opens your mouth for you. It takes a second for you to realize that you are now screaming back in his face."
+
             mc "AAAAAAA{i}AAAAAAAHHH!{/i}"
 
             unknown "YEEAAHH!!!"
 
-            "You take a step back, jerking your head left and right to see your assailant. Following their laughter, you see them straighten from their hiding place and rise to their full height...Woah. {i}Muscles{/i}."
+            "You pant, slightly out of breath and throat sore from the yelling. Jeez, that was embarrassing.  You sheepishly look up to look at the person who startled you for the first time."
+
+            "...Woah. {i}Muscles{/i}."
 
             return
 
         label fight:
 
-            "{i}Thud.{/i}"
+            $points += posAnswer
 
-            mc "Ouch!"
-            "{i}What the hell? That felt like punching a wall!{/i}"
+            "Before you can even process what was happening, your arm is in the air and your hand feels like you’ve just hit a brick wall. "
 
-            unknown " Ach! That hurt! Nice reflexes, buddy!"
+            mc "Shit! Ouch!"
 
-            "Biting back a retort and rubbing your aching fist, you finally get a good look at the person who startled you. ...Woah. {i}Muscles.{/i}"
+            unknown "That hurt! Nice punch! You have some good reflexes dude."
+
+            "{i}Is he for real?{/i}"
+
+            "You bite back a retort while nursing your hand. Fuck, did you split a knuckle? You look up at whatever boulder-ass motherfucker you just hit to give him a {i}look{/i}. A “What the fuck was {b}that{/b}???” Look."
+
+            "...Woah. {i}Muscles{/i}."
 
             return
 
         #~~~~~~~~~~~
 
         label wtf:
+
+            $points += negAnswer
+            $wtf = True
 
             mc "What the hell was that for, you punk?! You can’t just go and scare people like that, geesh!"
 
@@ -162,6 +215,8 @@ label .meet:
 
         label HaS:
 
+            $points+= posAnswer
+
             magnus "Yup! Health and Safety Violation, that’s me! Haha, the name’s actually Magnus, Magnus Burnsides. Hail and well met and all that, what’s your name?"
 
             return
@@ -170,11 +225,15 @@ label .meet:
 
         label tellname:
 
+            $points += neutAnswer
+
             mc "My name's [mcname]. It's nice to meet you!"
 
             return
 
         label noname:
+
+            $points+= negAnswer
 
             mc "You just shouted at me for no reason, I don’t see why I should tell you anything!"
 
@@ -188,9 +247,13 @@ label .meet:
 
         label inspector:
 
-            mc "My name is...."
+            $points += posAnswer
+
+            mc "My name is..."
 
             mc "The Health and Safety inspector."
+
+            #show magnus concerned
 
             "Magnus pales slightly. Steven looks up at the mention of an inspector with concern before you laugh."
 
@@ -202,7 +265,11 @@ label .meet:
 
         label bump:
 
+            $points += posAnswer
+
             "Julia blinks in confusion for a second, but she gets the picture pretty fast, laughing loudly and closing her fist to knock her knuckles against yours."
+
+            #show julia happy
 
             julia "Ahaha! I get it! Handshake too boring for you, that it? [mcname], wasn’t it? Well, if you aren’t too cool for school I hope I’ll see you round here again."
 
@@ -213,6 +280,8 @@ label .meet:
             return
 
         label shake:
+
+            $points += neutAnswer
 
             "You blink at Julia’s outstretched palm for a second, before smiling back at her and taking it. Her palms are broad and calloused, and she’s warm."
 
@@ -227,6 +296,8 @@ label .meet:
             return
 
         label noshake:
+
+            $points += negAnswer
 
             "The moment stretches."
 
