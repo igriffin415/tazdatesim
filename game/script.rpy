@@ -15,6 +15,8 @@ init:
     # OTHERS
     define angus = Character("Angus")
     define unknown = Character("????")
+    define steven = Character("Steven")
+    define julia = Character("Julia")
 
 
 # The game starts here.
@@ -47,7 +49,7 @@ label start2:
 
     "{i}Thank god I got the bags with wheels,{/i} you think to yourself, hopping over the curb and…"
 
-    jump lupmeet.meet
+    jump magnusmeet.meet
 
     #after all lup meeting choices
 

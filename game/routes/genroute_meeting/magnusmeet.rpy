@@ -17,7 +17,7 @@ label .meet:
         "There are quite a few people bustling up and down the corridor, entering rooms that are alive with laughter and creation. The building seems to be home to a variety of trades, from the signs: metalworking, carpentry, electrics...the list goes on."
 
         "The buzzing you heard leads you to the woodworking workshop."
-
+        scene bg roost
         "Opening the door a sliver, you see the buzzing is coming from a young woman in  goggles and ear protectors operating some kind of saw. There’s an older man as well, who appears to be varnishing a cabinet in a nice cherry."
 
         "Neither of them seem to have noticed you yet. They both appear very intent on their tasks, to the point of shutting out the world around-"
@@ -38,11 +38,14 @@ label .meet:
             "{i}Freak out{/i}":
                 call freak
 
+        show steven neutral at left
         unknown "Magnus! We’ve talked about this, don’t yell in my workshop! People are operating machinery in here!"
 
         magnus "Sorry Steven!"
 
         steven "Honestly. You’re a walking health and safety violation."
+
+        hide steven
 
         "As the older man goes back to his work, Magnus turns back to you with a grin on his face."
 
@@ -72,6 +75,8 @@ label .meet:
 
         "You notice that the whirring buzz that filled the room has stopped, and the woman who was manning the buzz saw is coming towards you, both ear protectors and goggles in hand. She’s got a remarkable resemblance to Steven--maybe they’re related?"
 
+        show julia neutral at left
+
         julia "Magnus, have you been scaring the regular folk again?"
 
         magnus "Oh, come on! Why is {i}everyone{/i} on my case about this?"
@@ -82,6 +87,7 @@ label .meet:
 
         "She extends her hand."
 
+        #move menu to center
         menu:
 
             "{i}Go in for a fistbump.{/i}":
@@ -103,7 +109,11 @@ label .meet:
 
         #magnus " [If positive/neutral] (grins) Yeah! See you, [Y/N]. [If negative] (neutral expression) Yeah. See you." #will figure out if statements in morning lmao
 
+        hide julia
+        hide magnus
         "With a wave, they head back into the workshop, leaving you to continue exploring the campus."
+
+        return 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         label flight:
 
@@ -152,7 +162,7 @@ label .meet:
 
         label HaS:
 
-            magnus " Yup! Health and Safety Violation, that’s me! Haha, the name’s actually Magnus, Magnus Burnsides. Hail and well met and all that, what’s your name?"
+            magnus "Yup! Health and Safety Violation, that’s me! Haha, the name’s actually Magnus, Magnus Burnsides. Hail and well met and all that, what’s your name?"
 
             return
 
