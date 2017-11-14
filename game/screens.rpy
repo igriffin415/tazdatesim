@@ -201,10 +201,19 @@ style input:
 
 screen choice(items):
     style_prefix "choice"
+    window:
+        if(len(items) % 2 == 0):
+            hbox:
+                for i in items:
+                    textbutton i.caption action i.action
+        else:
+            hbox:
+                for x in range(len(items) -1):
+                    textbutton items[x].caption action items[x].action
+            vbox:
+                textbutton items[len(items)-1].caption action items[len(items)-1].action
 
-    vbox:
-        for i in items:
-            textbutton i.caption action i.action
+
 
 
 ## When this is true, menu captions will be spoken by the narrator. When false,
@@ -213,21 +222,27 @@ define config.narrator_menu = True
 
 
 style choice_vbox is vbox
+style choice_hbox is hbox
 style choice_button is button
 style choice_button_text is button_text
 
 style choice_vbox:
-    xalign 0.1
-    ypos 405
-    yanchor 0.5
-
-    spacing gui.choice_spacing
+    xalign 0.5
 
 style choice_button is default:
     properties gui.button_properties("choice_button")
 
 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
+
+style choice_hbox:
+    box_wrap True
+    xalign 0.5
+    yalign gui.textbox_yalign
+
+    yfill True
+    yanchor 0.8
+    ysize gui.textbox_height
 
 
 ## Quick Menu screen ###########################################################

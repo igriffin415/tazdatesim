@@ -27,6 +27,7 @@ label start2:
     #sprite: none
 
     scene bg cab with dissolve
+    # show merle neutral at right
 
     mc "Well. This is it I guess. First week at COLLEGE NAME? Let's make it a good one."
 
