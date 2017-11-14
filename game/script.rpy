@@ -49,7 +49,7 @@ label start2:
 
     "{i}Thank god I got the bags with wheels,{/i} you think to yourself, hopping over the curb and…"
 
-    jump magnusmeet.meet
+    jump lupmeet.meet
 
     #after all lup meeting choices
 
@@ -67,6 +67,7 @@ label start2:
 
         "You’ll probably check that out once you settle into your dorm. Gotta focus on that first."
 
+        #jump lucretiameet.meet
     return
 
 label nameChara:

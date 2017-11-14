@@ -9,9 +9,9 @@ label .meet:
             wtf = False
 
         #bg library hallway
-        scene bg hallway
-        #show magnus neutral at right
-        "Lucretia sure was something. Smart but, kinda reserved? You wonder to yourself what it might take to get her out of her shell a bit, but a sudden buzzing coming from Roost Hall distracts you."
+        scene bg hallway with dissolve
+
+        "Lucretia sure was something. Smart, but kinda reserved? You wonder to yourself what it might take to get her out of her shell a bit, but a sudden buzzing coming from Roost Hall distracts you."
 
         "It fades suddenly. It was coming from Roost Hall? The place seems interesting; lots of people are walking in and out. The hall is well lit and warm, decorated with a variety of wood, metal and stone art pieces."
 
@@ -19,12 +19,14 @@ label .meet:
 
         "{i}What the-?{/i} Curiosity gets the better of you as you gently push open the classroom door."
 
-        scene bg roost
+        scene bg roost with dissolve
+
         "Opening the door a sliver, you see the buzzing is coming from a young woman in goggles and ear protectors operating some kind of saw. There’s an older man as well, who appears to be varnishing a cabinet in a nice cherry."
 
         "Neither of them seem to have noticed you yet. They both appear very intent on their tasks, to the point of shutting out the world around them, and you-"
 
-        show magnus neutral at right
+        show magnus neutral at right with CropMove(.1, "slideleft") #or zoomin? can't change the time tho
+
         unknown "MAGNUS!!"
 
         mc "{i}What the -{/i}"
@@ -40,7 +42,8 @@ label .meet:
             "{i}Freak out{/i}":
                 call freak
 
-        show steven neutral at left
+        show steven neutral at left with easeinleft
+        show magnus neutral
         unknown "Magnus! We’ve talked about this, don’t yell in my workshop! People are operating machinery in here!"
 
         magnus "Sorry Steven!"
@@ -57,7 +60,7 @@ label .meet:
 
         "Or at least, shit won’t fly into your eyes, you guess. "
 
-        hide steven
+        hide steven with easeoutleft
 
         "As the older man goes back to his work, Magnus turns back to you with a grin on his face."
 
@@ -99,7 +102,7 @@ label .meet:
 
         "You notice that the whirring buzz that filled the room has stopped, and the woman who was manning the buzz saw is coming towards you, both ear protectors and goggles in hand. She’s got a remarkable resemblance to Steven -- maybe they’re related?"
 
-        show julia neutral at left
+        show julia neutral at left with easeinleft
 
         julia "Magnus, have you been scaring the regular folk again?"
 
@@ -139,8 +142,8 @@ label .meet:
             show magnus neutral
             magnus "Yeah. See you."
 
-        hide julia
-        hide magnus
+        hide julia with easeoutleft
+        hide magnus with easeoutright
         "With a wave, they head back into the workshop, leaving you to continue exploring the campus."
 
         #for debugging
@@ -155,6 +158,8 @@ label .meet:
             "You turn and make a break for it without missing a beat. Scrambling away, you fail to notice the slight elevation of the doorway and fall backwards, landing on your back."
 
             "The voice comes back again, now at a regular volume."
+
+            show magnus concerned
 
             unknown "Sorry, sorry! Didn’t mean to scare ya so badly!"
 

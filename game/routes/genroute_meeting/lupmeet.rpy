@@ -144,7 +144,7 @@ label .meet:
 
                         lup "Me too, Hombre. Catch you later!"
 
-                        hide lup neutral
+                        hide lup neutral with easeoutright
 
                         "And with a quick wave, she’s gone. Lost in the sea of people that moved around you."
 
@@ -160,7 +160,7 @@ label .meet:
 
                         lup "Me too, Hombre. Catch you later!"
 
-                        hide lup neutral
+                        hide lup neutral with easeoutright
 
                         "And with a quick wave, she’s gone. Lost in the sea of people that moved around you."
 
@@ -187,7 +187,7 @@ label .meet:
 
                 lup "No sweat! If you see him though? Tell him “When Lup finds you, your ass is grass.”"
 
-                hide lup neutral
+                hide lup neutral with moveoutright
 
                 "And with that, “Lup” disappears into the sea of people. {i}What a strange person. I pity Greg for whatever the hell he did.{/i}"
 
@@ -232,7 +232,7 @@ label .meet:
                 jump badside
 
             label badside:
-                hide lup neutral with dissolve
+
                 #for debugging:
                 "You have %(points)d points"
 
@@ -247,7 +247,7 @@ label .meet:
                 jump finddorm
 
             label goodside:
-                hide lup neutral with dissolve
+
                 #for debugging
                 "You have %(points)d points"
 
