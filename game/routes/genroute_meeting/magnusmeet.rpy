@@ -144,7 +144,7 @@ label .meet:
 
         hide julia with easeoutleft
         hide magnus with easeoutright
-        "With a wave, they head back into the workshop, leaving you to continue exploring the campus."
+        "With a wave, they head back to their work, and you leave the shop; you to continue exploring the campus, the source of the mysterious buzzing sateing your curiosity for the moment."
 
         #for debugging
         "You have %(points)d points"
