@@ -1,3 +1,4 @@
+
 label lucretiameet:
     
 label .meet:
@@ -24,6 +25,9 @@ label .meet:
             jump blame
             
     label apologize:
+        
+        $points += posAnswer
+        
         mcname "I'm so sorry! I wasn't looking where I was going and ran right into you!"
         
         "Color fills her cheeks and she lifts her hand away from her nose. Thank god, there doesn't seem to be any blood?"
@@ -32,6 +36,9 @@ label .meet:
         jump bothResponse
         
     label blame:
+        
+        $points += negAnswer
+        
         mcname "Watch where you're going!"
         
         unknown "I  couldn't see over all my books and that's my fault. I'm sorry."
@@ -46,6 +53,9 @@ label .meet:
                 jump acceptApology
                 
     label acceptApology:
+        
+        $points += negAnswer
+        
         mcname "You should be sorry."
         
         "Her eyes darken even as the flush on her cheeks deepen."
@@ -63,6 +73,9 @@ label .meet:
                 jump leave
                 
         label attemptHelp:
+            
+            $points += negAnswer
+            
             "You reach down to pick up one of the many books scattered across the walkway."
             
             "Her hand snaps out and grabs the book out from under your hand."
@@ -75,6 +88,9 @@ label .meet:
                     jump leave
                     
             label leave:
+                
+                $points += negAnswer
+                
                 "You nod, step lightly over the books, and continue towards the buildings before you."
                 
                 hide lucretia neutral
@@ -87,9 +103,12 @@ label .meet:
                 
                 "As you look around, a sudden buzzing catches your attention. Curiosity gets the better of you as you gently push open the classroom door." 
                 
-                jump magnusmeet.meet
+                jump leaveLucretia #replace with magnusmeet
                 
             label askIfAlright:
+                
+                $points += posAnswer
+                
                 mcname "Is your nose okay?"
                 
                 "She looks down at her hands to check for a moment before looking back up to you."
@@ -107,6 +126,9 @@ label .meet:
                         jump sayGoodbye
                         
             label sayGoodbye:
+                
+                $points += neutAnswer
+                
                 mcname "Maybe I'll see you around campus." 
                 
                 "She looks up from the hanful of books she's collected already and gives you a polite smile."
@@ -123,9 +145,12 @@ label .meet:
                 
                 "As you look around, a sudden buzzing catched your attention. Curiosity gets the better of you as you gently push open the classroom door." 
                 
-                jump magnusmeet.meet
+                jump leaveLucretia
                 
             label offerHelp:
+                
+                $points += posAnswer
+                
                 mcname "Please, let me help you with those!"
                 
                 unknown "Oh no! It's fine, really. You go ahead and keep going. I'm sure you have important places to be."
@@ -137,6 +162,9 @@ label .meet:
                         jump sayGoodbye
             
             label insistHelp:
+                
+                $points += posAnswer
+                
                 mcname "I was heading towards the library anyway. It would be no trouble at all."
                 
                 "She stares at you a moment before ducking her head."
@@ -155,6 +183,9 @@ label .meet:
                     "Say nothing and wallow in your mistakes":
                         jump sayNothing
             label askName:
+                
+                $points += posAnswer
+                
                 mcname "Excuse me, but I didn't catch your name."
                 
                 unknown "It's Lucretia. I would shake your hand but I don't exactly want to pick up these books again."
@@ -169,9 +200,12 @@ label .meet:
                 
                 "In unspoken accord, you each push a shoulder against one of the carved oak double doors and push them open."
                 
-                jump unite
+                jump lucretiaUnite
                 
             label introduceSelf:
+                
+                $points += neutAnswer
+                
                 mcname "By the way, my name is [mcname]."
                 
                 unknown "Nice to meet you, [mcname]. I apologize for my poor manners! My name is Lucretia."
@@ -180,9 +214,12 @@ label .meet:
                 
                 "Lucretia steps ahead and pushes one of the double-doors open with her shoulder for you to follow through behind. You let your gaze wander around the room as you walk toward return slot."
                 
-                jump unite
+                jump lucretiaUnite
             
             label sayNothing:
+                
+                $points += neutAnswer
+                
                 "The two of you pick up the last couple books before walking toward the library in awkward silence."
                 
                 "As you approach the double-doors of the library she glances over at you."
@@ -196,8 +233,10 @@ label .meet:
                 lucretia "Glad to make your acquaintance, [mcname]."
                 
                 "She easily pushes one of the oak doors open with her shoulder and you walk into the library behind her, gaze wandering around the room."
+                
+                jump lucretiaUnite
             
-            label unite:
+            label lucretiaUnite:
                 "It's a beautiful sight."
                 
                 "Shelves rise up high into the air, decorated sliding ladders acting as the only way to reach some of the higher ones. Sunlight filters in from skylights on the ceiling. There are alcoves hidden in the curves of the walls with elegant carving curling all along the arch of their openings."
@@ -205,5 +244,122 @@ label .meet:
                 "Lucretia nudges your arm, dragging you back to the present."
                 
                 "You help her put the books in the return slot."
-
-
+                
+                menu:
+                    "Ask about the jellyfish books":
+                        jump askJellyfish
+                    "Ask if she spends a lot of time in the library.":
+                        jump askLibrary
+                    "Leave":
+                        jump leaveLibrary
+                        
+            label askJellyfish:
+                
+                $points += posAnswer
+                
+                mcname "Whoa, jellyfish! Those little guys are neat."
+                
+                "Lucretia beams."
+                
+                lucretia "They sure are. I work in Dr.PROFESSOR's lab so I have a lot of reading to do about them."
+                
+                mcname "That's so cool! What do you study?"
+                
+                lucretia "Well, in general, English and abjuration and marine biology. But in the lab I work on the immortal jellyfish, looking at the composition of its mitochondrial genome."
+                
+                "You stare at her in stunned silence."
+                
+                lucretia "Ah, sorry for getting too enthusiastic there. I’m a gigantic nerd."
+                
+                menu:
+                    "Ask to learn more":
+                        jump askMore
+                    "Agree with her":
+                        jump agreeWith
+                        
+            label askMore:
+                
+                $points += posAnswer
+                
+                mcname "No, no, no, that sounds incredible! I'd love to learn more."
+                
+                "Lucretia grins."
+                
+                lucretia "Let me find you my favorite jellyfish book then! It's a bit long but it's {i}facinating{/i}."
+                
+                "Lucretia darts off into the stacks, and she’s gone before you can say another word. You hope she’s not trying to politely abandon you."
+                
+                "Lucretia comes back holding a giant heavy tome simply labeled “JELLYFISH”."
+                
+                lucretia "You'll find it really interesting, I promise!"
+                
+                "You take it and turn it over in your hands."
+                
+                mcname "Thank you so much, Lucretia!"
+                
+                lucretia "Oh, you should add me on Facebook in case you have any questions."
+                
+                "She scribbles on a piece of paper and tucks it in the cover of the book."
+                
+                mcname "..."
+                
+                lucretia "Okay! I gotta run, this abjuration thesis isn’t going to write itself. But I’ll see you around!"
+                
+                mcname "See you!"
+                
+                hide lucretia neutral with dissolve
+                "Lucretia waves and darts off into the depths of the library again"
+    
+                jump leaveLucretia
+                
+            label agreeWith:
+                
+                $points += neutAnswer
+                
+                "You laugh and agree."
+                
+                mcname "You really are!"
+                
+                "Lucretia blushes."
+                
+                lucretia "Well, I gotta run, this abjuration thesis isn’t going to write itself. But I’ll see you around!"
+                
+                mcname "See you!"
+                
+                hide lucretia neutral with dissolve
+                "Lucretia waves and darts off into the depths of the library again"
+                
+                jump leaveLucretia
+                
+            label askLibrary:
+                
+                $points += neutAnswer
+                
+                mcname "Do you spend a lot of time studying here?"
+                
+                lucretia "Yes. It's practically my second home! I have tons of papers to write."
+                
+                mcname "That's intense. What do you study?"
+                
+                lucretia "English and marine biology."
+                
+                mcname "That's an interesting combination!"
+                
+                lucretia "Yeah, all my friends think it's crazy but I love it."
+                
+                "Lucretia fidgets with a bookmark on the counter nearby."
+                
+                "An awkward silence is imminent"
+                
+                mcname "I guess I'll see you around then!"
+                
+                lucretia "Bye!"
+                hide lucretia neutral with dissolve
+                
+                jump leaveLucretia 
+                
+            label leaveLucretia: #just to make sure points are working properly, can be removed later
+                
+                "You have %(points)d points"
+                
+                jump magnusmeet.meet
