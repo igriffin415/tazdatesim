@@ -104,6 +104,8 @@ label .meet:
 
                     lup "Anyway, keep an eye out for Greg. Catch you later!"
 
+                    hide lup neutral with moveoutright
+
                     "You wave as she disappears quickly into the sea of people. She seems really nice. You hope you get to see her again."
 
                     jump goodside
@@ -235,6 +237,8 @@ label .meet:
 
                 #for debugging:
                 "You have %(points)d points"
+
+                hide lup neutral with moveoutright
 
                 "And with that, she angrily bumps past you, disappearing into the sea of people."
 
