@@ -244,7 +244,7 @@ label .meet:
 
                 "Fuck. You’re missing $15?!? It couldn’t have been Lup, you would have noticed. Probably just fell out on the trip here."
 
-                jump finddorm
+                return
 
             label goodside:
 
@@ -253,4 +253,4 @@ label .meet:
 
                 "You pull out your wallet to take the map out of the billfold."
 
-                jump finddorm
+                return

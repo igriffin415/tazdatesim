@@ -21,10 +21,7 @@ init:
 
 # The game starts here.
 label start:
-    jump nameChara
-    return
-
-label start2:
+    call nameChara
     #bg: cab interior
     #sprite: none
 
@@ -49,25 +46,26 @@ label start2:
 
     "{i}Thank god I got the bags with wheels,{/i} you think to yourself, hopping over the curb and…"
 
-    jump lupmeet.meet
+    call lupmeet.meet
 
     #after all lup meeting choices
 
-    label finddorm:
+    # label finddorm:
 
-        "Where {i}was{/i} your dorm? You study it carefully before folding it gently and sticking it into your jacket pocket for easy access."
+    "Where {i}was{/i} your dorm? You study it carefully before folding it gently and sticking it into your jacket pocket for easy access."
 
-        "You’ll definitely need to look over it at least two more times."
+    "You’ll definitely need to look over it at least two more times."
 
-        "You make your way slowly over to the entrance, taking note of the signs plastered in the large buildings."
+    "You make your way slowly over to the entrance, taking note of the signs plastered in the large buildings."
 
-        "Arcana Hall… Interesting. You can see Roost Hall in the distance and an huge building with a very large dome sitting atop it. You have no idea what that building is used for but the dome is cool. Looks like there’s a mural on it from here."
+    "Arcana Hall… Interesting. You can see Roost Hall in the distance and an huge building with a very large dome sitting atop it. You have no idea what that building is used for but the dome is cool. Looks like there’s a mural on it from here."
 
-        "Oh! Nestled into the corner of Roost Hall is a library. You’re probably going to spend a ton of time in there; you can’t work on your homework unless you’re in that kind of environment. You get too distracted."
+    "Oh! Nestled into the corner of Roost Hall is a library. You’re probably going to spend a ton of time in there; you can’t work on your homework unless you’re in that kind of environment. You get too distracted."
 
-        "You’ll probably check that out once you settle into your dorm. Gotta focus on that first."
+    "You’ll probably check that out once you settle into your dorm. Gotta focus on that first."
 
         #jump lucretiameet.meet
+    call magnusmeet.meet
     return
 
 label nameChara:
@@ -75,4 +73,4 @@ label nameChara:
     $ mcname = renpy.input("What is your name?")
     $ mcname = mcname.strip()
     define mc = Character("[mcname]")
-    jump start2
+    return
