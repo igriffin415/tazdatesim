@@ -43,7 +43,7 @@ label .meet:
                 call freak
 
         show steven neutral at left with easeinleft
-        # show magnus neutral
+        show magnus neutral
         unknown "Magnus! We’ve talked about this, don’t yell in my workshop! People are operating machinery in here!"
 
         magnus "Sorry Steven!"
