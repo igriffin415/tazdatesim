@@ -3,7 +3,7 @@ label lupmeet:
 
 label .meet:
         python:
-            points = 0 #i /think/ we might be able to say lupmeet.meet.$points in order to access this from a diff file
+            lmpoints = 0 #i /think/ we might be able to say lupmeet.meet.$lmpoints in order to access this from a diff file
             posAnswer = 3
             neutAnswer = 0
             negAnswer = -3
@@ -37,7 +37,7 @@ label .meet:
 
         label nope:
             python:
-                points += neutAnswer
+                lmpoints += neutAnswer
             #sprite: lup distrusting
 
             mc "I haven't."
@@ -62,7 +62,7 @@ label .meet:
 
             label coursenot:
                 python:
-                    points += posAnswer
+                    lmpoints += posAnswer
 
                 mc "No sorry, I actually just got here? I’m not even sure who that is. What did he do?"
 
@@ -96,7 +96,7 @@ label .meet:
 
                 label ignore:
                     python:
-                        points += neutAnswer
+                        lmpoints += neutAnswer
 
                     "You decide to ignore that. Probably better in the long run. She seems WAY out of your league."
 
@@ -112,7 +112,7 @@ label .meet:
 
                 label flirt:
                     python:
-                        points += posAnswer
+                        lmpoints += posAnswer
 
                     mc "And how could I go about getting one of those “third dates”..?"
 
@@ -132,7 +132,7 @@ label .meet:
 
                     label help:
                         python:
-                            points += posAnswer
+                            lmpoints += posAnswer
 
                         mc "Maybe I could help you look for him after I get my things to my dorm? If I could figure out where that is…"
 
@@ -156,7 +156,7 @@ label .meet:
 
                     label goodluck:
                         python:
-                            points += neutAnswer
+                            lmpoints += neutAnswer
 
                         mc "Good luck finding him! I hope that you catch him quickly."
 
@@ -182,7 +182,7 @@ label .meet:
 
             label no:
                 python:
-                    points += neutAnswer
+                    lmpoints += neutAnswer
                 mc "No?"
 
                 #sprite: lup relaxed
@@ -203,7 +203,7 @@ label .meet:
 
         label badchoice:
             python:
-                points += negAnswer
+                lmpoints += negAnswer
             #sprite: lup distrusting
 
             "Her eyes narrow."
@@ -236,7 +236,7 @@ label .meet:
             label badside:
 
                 #for debugging:
-                "You have %(points)d points"
+                "You have %(lmpoints)d lmpoints"
 
                 hide lup neutral with moveoutright
 
@@ -253,7 +253,7 @@ label .meet:
             label goodside:
 
                 #for debugging
-                "You have %(points)d points"
+                "You have %(lmpoints)d lmpoints"
 
                 "You pull out your wallet to take the map out of the billfold."
 
