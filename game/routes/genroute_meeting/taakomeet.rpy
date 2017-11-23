@@ -29,9 +29,9 @@ label .meet:
         "You turn to escape, but your eye catches a familiar face and you double take."
 
         if(lmpoints < 0 ):
-            call .goodlup
-        else:
             call .badlup
+        else:
+            call .goodlup
 
 #unite
         mc "So what’s all this for?"
@@ -48,6 +48,7 @@ label .meet:
             "Oh.":
                 call .oh
 
+        hide taako with easeoutright
         "You weasel your way out of the auditorium and down the hall, the sounds of people still following you in the echoes, even as you get further and further from the fray."
 
         "Probably not. You’re better off trying to find your way out of Legato entirely."
@@ -158,9 +159,13 @@ label .meet:
 #~~~~~~~~~~~
         label .badlup:
 
-            "What luck you have. It’s Lup. You stare a bit longer than you should have, and before you know it, you’re making eye contact with her. Your reflexes are far less than cat-like; there’s no way she didn’t spot you, and after the impression you made you doubt she didn’t recognize you there."
+            "What luck you have. It’s Lup. You stare a bit longer than you should have, and before you know it, you’re making eye contact with her."
+
+            "Your reflexes are far less than cat-like; there’s no way she didn’t spot you, and after the impression you made you doubt she didn’t recognize you there."
 
             "Maybe if you snuck away now? Where’s the exit?"
+
+            show taako neutral at right with easeinright
 
             notlup "Hey."
 
@@ -198,10 +203,27 @@ label .meet:
             taako "You know it. Cha’boys a star."
 
             menu:
-                "{i}Gush about theatre{/i}":
+                "{i}Gush about theatre.{/i}":
                     call .gush
                 "Cool!":
                     call .cool
+
+            taako "I dabbled in a few different spots before deciding to do this. I’m already great at transmutation, don’t need to major in that, etcetera, etcetera."
+
+            taako "What can I say, I live for the applause."
+
+            "A small chime rang out from Taako’s side. He dug through his bag and pulled out his cell, his face lighting up while reading his notifications."
+
+            taako "Oh shit, bone boy’s coming through for Taako. You met Krav? He’s pretty cool. Got a lead on something more fun happening, wanna come?"
+
+            menu:
+                "I wish I could!":
+                    call .iwish
+                "Parties aren't really my thing.":
+                    call .notmything
+                "Yeah, no.":
+                    call .yeahno
+
             return
 
 
@@ -239,21 +261,6 @@ label .meet:
                     "I don't like my major.":
                         call .dontlike
 
-                taako "I dabbled in a few different spots before deciding to do this. I’m already great at transmutation, don’t need to major in that, etcetera, etcetera."
-
-                taako "What can I say, I live for the applause."
-
-                "A small chime rang out from Taako’s side. He dug through his bag and pulled out his cell, his face lighting up while reading his notifications."
-
-                taako "Oh shit, bone boy’s coming through for Taako. You met Krav? He’s pretty cool. Got a lead on something more fun happening, wanna come?"
-
-                menu:
-                    "I wish I could!":
-                        call .iwish
-                    "Parties aren't really my thing.":
-                        call .notmything
-                    "Yeah, no.":
-                        call .yeahno
 
                 return
 
@@ -286,7 +293,7 @@ label .meet:
                 mc "I’ll be on the lookout. Bye!"
                 return
 
-        label .dontlike:
+        label .yeahno:
                 $tmpoints += negAnswer
                 mc "Yeah, no thanks."
 
@@ -329,6 +336,8 @@ label .meet:
             mc "Oh, I didn’t mean-"
 
             taako "Yeah whatever. I’ll call you."
+
+            hide taako with easeoutright
 
             "Taako turned abruptly and walked through the crowd, plastering a smile across his face and giving a very enthusiastic girl a hug."
 

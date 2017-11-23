@@ -21,21 +21,21 @@ label .meet:
         menu:
 
             "I haven't, sorry.":
-                jump havenot
+                jump .havenot
 
             "Nope.":
-                jump nope
+                jump .nope
 
             "Even if I had, I probably wouldn’t tell YOU.":
-                jump evenif
+                jump .evenif
 
 
-        label havenot:
+        label .havenot:
 
-            jump coursenot
+            jump .coursenot
 
 
-        label nope:
+        label .nope:
             python:
                 lmpoints += neutAnswer
             #sprite: lup distrusting
@@ -49,18 +49,18 @@ label .meet:
             menu:
 
                 "No, of course not.":
-                    jump coursenot
+                    jump .coursenot
 
                 "No?":
-                    jump no
+                    jump .no
 
                 "And if I am?":
-                    jump andif
+                    jump .andif
 
 
 
 
-            label coursenot:
+            label .coursenot:
                 python:
                     lmpoints += posAnswer
 
@@ -89,12 +89,12 @@ label .meet:
                 menu:
 
                     "{i}Ignore the comment.{/i}":
-                        jump ignore
+                        jump .ignore
 
                     "{i}Flirt back.{/i}":
-                        jump flirt
+                        jump .flirt
 
-                label ignore:
+                label .ignore:
                     python:
                         lmpoints += neutAnswer
 
@@ -108,9 +108,9 @@ label .meet:
 
                     "You wave as she disappears quickly into the sea of people. She seems really nice. You hope you get to see her again."
 
-                    jump goodside
+                    jump .goodside
 
-                label flirt:
+                label .flirt:
                     python:
                         lmpoints += posAnswer
 
@@ -125,12 +125,12 @@ label .meet:
                     menu:
 
                         "Help you look?":
-                            jump help
+                            jump .help
 
                         "Good luck!":
-                            jump goodluck
+                            jump .goodluck
 
-                    label help:
+                    label .help:
                         python:
                             lmpoints += posAnswer
 
@@ -152,9 +152,9 @@ label .meet:
 
                         "It’s too bad she had to leave so quickly. You really enjoyed that chat."
 
-                        jump goodside
+                        jump .goodside
 
-                    label goodluck:
+                    label .goodluck:
                         python:
                             lmpoints += neutAnswer
 
@@ -168,19 +168,19 @@ label .meet:
 
                         "It’s too bad she had to leave so quickly. You really enjoyed that chat."
 
-                        jump goodside
+                        jump .goodside
 
 
 
 
-            label andif:
+            label .andif:
 
                 mc "And if I am? What could you even do about it?"
 
-                jump badchoice
+                jump .badchoice
 
 
-            label no:
+            label .no:
                 python:
                     lmpoints += neutAnswer
                 mc "No?"
@@ -193,15 +193,15 @@ label .meet:
 
                 "And with that, “Lup” disappears into the sea of people. {i}What a strange person. I pity Greg for whatever the hell he did.{/i}"
 
-                jump goodside
+                jump .goodside
 
-        label evenif:
+        label .evenif:
 
             mc "Nope. Honestly if I had I wouldn’t tell you, if you’re so vindictive you’re demanding people tell you where some dude went. "
 
-            jump badchoice
+            jump .badchoice
 
-        label badchoice:
+        label .badchoice:
             python:
                 lmpoints += negAnswer
             #sprite: lup distrusting
@@ -213,27 +213,27 @@ label .meet:
             menu:
 
                 "What did he do?":
-                    jump whatdid
+                    jump .whatdid
 
                 "Sorry I thought you might just be bullying him.":
-                    jump bullying
+                    jump .bullying
 
 
-            label whatdid:
+            label .whatdid:
 
                 mc "Why? What did he even do?"
 
                 lup "Listen, thug. At this point it’s not of your damn business. If you see his sorry ass? Tell him “Lup’s coming. And when she finds you? Your ass is grass.”"
 
-                jump badside
+                jump .badside
 
-            label bullying:
+            label .bullying:
 
                 lup "Are you kidding me? That’s the kind of person you think I am?? You don’t even know me!"
 
-                jump badside
+                jump .badside
 
-            label badside:
+            label .badside:
 
                 #for debugging:
                 "You have %(lmpoints)d lmpoints"
@@ -250,7 +250,7 @@ label .meet:
 
                 return
 
-            label goodside:
+            label .goodside:
 
                 #for debugging
                 "You have %(lmpoints)d lmpoints"

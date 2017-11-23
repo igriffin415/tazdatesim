@@ -34,13 +34,13 @@ label .meet:
         menu:
 
             "{i}Fight{/i}":
-                call fight
+                call .fight
 
             "{i}Flight{/i}":
-                call flight
+                call .flight
 
             "{i}Freak out{/i}":
-                call freak
+                call .freak
 
         show steven neutral at left with easeinleft
         show magnus neutral
@@ -67,32 +67,32 @@ label .meet:
         menu:
 
             "Health and Safety, hm?":
-                call HaS
+                call .HaS
 
             "What the hell?":
-                call wtf
+                call .wtf
 
 
         if(wtf):
             menu:
 
                 "{i}Tell him.{/i}":
-                    call tellname
+                    call .tellname
 
                 "{i}No way!{/i}":
-                    call noname
+                    call .noname
 
         else:
             menu:
 
                 "{i}Tell him.{/i}":
-                    call tellname
+                    call .tellname
 
                 "{i}No way!{/i}":
-                    call noname
+                    call .noname
 
                 "{i}Health and Safety Inspector{/i}":
-                    call inspector
+                    call .inspector
 
         magnus "Nice to meet you, [mcname]! I haven’t seen you around here before, are you a new student? You interested in woodworking at all?"
 
@@ -118,13 +118,13 @@ label .meet:
         menu:
 
             "{i}Go in for a fistbump.{/i}":
-                call bump
+                call .bump
 
             "{i}Shake her hand.{/i}":
-                call shake
+                call .shake
 
             "{i}Don't take her hand.{/i}":
-                call noshake
+                call .noshake
 
         julia "I should probably get back to work. You know how it is, those deadlines sneak up on ya!"
 
@@ -151,7 +151,7 @@ label .meet:
 
         return
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        label flight:
+        label .flight:
 
             $mampoints += neutAnswer
 
@@ -171,7 +171,7 @@ label .meet:
 
             return
 
-        label freak:
+        label .freak:
 
             $mampoints += neutAnswer
 
@@ -187,7 +187,7 @@ label .meet:
 
             return
 
-        label fight:
+        label .fight:
 
             $mampoints += posAnswer
 
@@ -207,7 +207,7 @@ label .meet:
 
         #~~~~~~~~~~~
 
-        label wtf:
+        label .wtf:
 
             $mampoints += negAnswer
             $wtf = True
@@ -218,7 +218,7 @@ label .meet:
 
             return
 
-        label HaS:
+        label .HaS:
 
             $mampoints+= posAnswer
 
@@ -228,7 +228,7 @@ label .meet:
 
         #~~~~~~~~~
 
-        label tellname:
+        label .tellname:
 
             $mampoints += neutAnswer
 
@@ -236,7 +236,7 @@ label .meet:
 
             return
 
-        label noname:
+        label .noname:
 
             $mampoints+= negAnswer
 
@@ -250,7 +250,7 @@ label .meet:
 
             return
 
-        label inspector:
+        label .inspector:
 
             $mampoints += posAnswer
 
@@ -268,7 +268,7 @@ label .meet:
 
         #~~~~~~~~~~~~~~~
 
-        label bump:
+        label .bump:
 
             $mampoints += posAnswer
 
@@ -284,7 +284,7 @@ label .meet:
 
             return
 
-        label shake:
+        label .shake:
 
             $mampoints += neutAnswer
 
@@ -300,7 +300,7 @@ label .meet:
 
             return
 
-        label noshake:
+        label .noshake:
 
             $mampoints += negAnswer
 
