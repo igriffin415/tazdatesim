@@ -17,6 +17,7 @@ init:
     define unknown = Character("????")
     define steven = Character("Steven")
     define julia = Character("Julia")
+    define notlup = Character("Lup?")
 
 
 # The game starts here.
@@ -66,6 +67,7 @@ label start:
 
     call lucretiameet.meet
     call magnusmeet.meet
+    call taakomeet.meet
     return
 
 label nameChara:

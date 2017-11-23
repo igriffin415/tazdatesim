@@ -2,7 +2,7 @@ label magnusmeet:
 
 label .meet:
         python:
-            points = 0
+            mampoints = 0
             posAnswer = 3
             neutAnswer = 0
             negAnswer = -3
@@ -134,7 +134,7 @@ label .meet:
 
         "{i}She gestures to Steven.{/i}"
 
-        if(points>=0):
+        if(mampoints>=0):
             show magnus happy
             magnus "Yeah! See you, [mcname]."
 
@@ -147,13 +147,13 @@ label .meet:
         "With a wave, they head back to their work, and you leave the shop; you to continue exploring the campus, the source of the mysterious buzzing sateing your curiosity for the moment."
 
         #for debugging
-        "You have %(points)d points"
+        "You have %(mampoints)d mampoints"
 
         return
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         label .flight:
 
-            $points += neutAnswer
+            $mampoints += neutAnswer
 
             "You turn and make a break for it without missing a beat. Scrambling away, you fail to notice the slight elevation of the doorway and fall backwards, landing on your back."
 
@@ -173,7 +173,7 @@ label .meet:
 
         label .freak:
 
-            $points += neutAnswer
+            $mampoints += neutAnswer
 
             "Nope. Nope nope nope. This is not what you signed up for today. Your brain takes over and opens your mouth for you. It takes a second for you to realize that you are now screaming back in his face."
 
@@ -189,7 +189,7 @@ label .meet:
 
         label .fight:
 
-            $points += posAnswer
+            $mampoints += posAnswer
 
             "Before you can even process what was happening, your arm is in the air and your hand feels like you’ve just hit a brick wall. "
 
@@ -209,7 +209,7 @@ label .meet:
 
         label .wtf:
 
-            $points += negAnswer
+            $mampoints += negAnswer
             $wtf = True
 
             mc "What the hell was that for, you punk?! You can’t just go and scare people like that, geesh!"
@@ -220,7 +220,7 @@ label .meet:
 
         label .HaS:
 
-            $points+= posAnswer
+            $mampoints+= posAnswer
 
             magnus "Yup! Health and Safety Violation, that’s me! Haha, the name’s actually Magnus, Magnus Burnsides. Hail and well met and all that, what’s your name?"
 
@@ -230,7 +230,7 @@ label .meet:
 
         label .tellname:
 
-            $points += neutAnswer
+            $mampoints += neutAnswer
 
             mc "My name's [mcname]. It's nice to meet you!"
 
@@ -238,7 +238,7 @@ label .meet:
 
         label .noname:
 
-            $points+= negAnswer
+            $mampoints+= negAnswer
 
             mc "You just shouted at me for no reason, I don’t see why I should tell you anything!"
 
@@ -252,7 +252,7 @@ label .meet:
 
         label .inspector:
 
-            $points += posAnswer
+            $mampoints += posAnswer
 
             mc "My name is..."
 
@@ -270,7 +270,7 @@ label .meet:
 
         label .bump:
 
-            $points += posAnswer
+            $mampoints += posAnswer
 
             "Julia blinks in confusion for a second, but she gets the picture pretty fast, laughing loudly and closing her fist to knock her knuckles against yours."
 
@@ -286,7 +286,7 @@ label .meet:
 
         label .shake:
 
-            $points += neutAnswer
+            $mampoints += neutAnswer
 
             "You blink at Julia’s outstretched palm for a second, before smiling back at her and taking it. Her palms are broad and calloused, and she’s warm."
 
@@ -302,7 +302,7 @@ label .meet:
 
         label .noshake:
 
-            $points += negAnswer
+            $mampoints += negAnswer
 
             "The moment stretches."
 
