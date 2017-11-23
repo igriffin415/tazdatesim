@@ -202,7 +202,7 @@ label .meet:
                     call .gush
                 "Cool!":
                     call .cool
-
+            return
 
 
 
