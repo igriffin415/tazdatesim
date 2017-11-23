@@ -38,7 +38,7 @@ label .meet:
 
         "You gesture outwards at the people around you."
 
-        "Oh this shindig? Welcome back party for theatre nerds."
+        taako "Oh this shindig? Welcome back party for theatre nerds."
 
         menu:
             "Why are you here?":
