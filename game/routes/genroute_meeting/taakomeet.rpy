@@ -28,17 +28,35 @@ label .meet:
 
         "You turn to escape, but your eye catches a familiar face and you double take."
 
-        if(lmpoints <0 ):
-            call goodlup
+        if(lmpoints < 0 ):
+            call .goodlup
         else:
-            call badlup
+            call .badlup
 
 #unite
+        mc "So what’s all this for?"
 
+        "You gesture outwards at the people around you."
 
+        "Oh this shindig? Welcome back party for theatre nerds."
 
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        label goodlup:
+        menu:
+            "Why are you here?":
+                call .why
+            "Yeah, you seem the type.":
+                call .yeah
+            "Oh.":
+                call .oh
+
+        "You weasel your way out of the auditorium and down the hall, the sounds of people still following you in the echoes, even as you get further and further from the fray."
+
+        "Probably not. You’re better off trying to find your way out of Legato entirely."
+        #for debugging
+        "You have %(tmpoints)d points"
+        return
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        label .goodlup:
 
             "It’s Lup! What cool coincidence, seeing her twice in one day. You wait until she meets your eyes and you wave, walking towards her as she looks at you inquisitively."
 
@@ -60,9 +78,9 @@ label .meet:
 
             menu:
                 "Take it greatfully":
-                    call takehand
+                    call .takehand
                 "You got it":
-                    call nohand
+                    call .nohand
 
             mc "So. You're not Lup."
 
@@ -80,16 +98,16 @@ label .meet:
 
             menu:
                 "{i}Laugh{/i}":
-                    call laugh
+                    call .laugh
                 "{i}Agree{/i}":
-                    call agree
+                    call .agree
                 "{i}Disagree{/i}":
-                    call disagree
+                    call .disagree
 
 
             return
 
-        label takehand:
+        label .takehand:
             $tmpoints += posAnswer
 
             mc "Thanks."
@@ -98,7 +116,7 @@ label .meet:
 
             return
 
-        label nohand:
+        label .nohand:
             $tmpoints += negAnswer
 
             "Waving their hand away you get yourself to your feet. No reason to make yourself seem more incompetent. Brushing your hand back through your hair and patting down your clothes, you hope they won’t notice you aren’t making eye contact."
@@ -107,7 +125,7 @@ label .meet:
 
         #~~~~
 
-        label laugh:
+        label .laugh:
             $tmpoints += posAnswer
 
             "You can’t help but snicker at the mental image."
@@ -115,14 +133,14 @@ label .meet:
             mc "Ok, but seriously? If it comes to that, let me know. I want in."
             return
 
-        label agree:
+        label .agree:
             $tmpoints += neutAnswer
             mc "That’s a great revenge plan, Taako. If it comes to that let me know how it goes."
 
             taako "Will do, bubeleh."
             return
 
-        label disagree:
+        label .disagree:
             $tmpoints += negAnswer
             mc "Isn’t that kind of mean? Like, sure he was a douche but property damage is a bit extreme."
             #show taako angryears
@@ -138,7 +156,7 @@ label .meet:
             return
 
 #~~~~~~~~~~~
-        label badlup:
+        label .badlup:
 
             "What luck you have. It’s Lup. You stare a bit longer than you should have, and before you know it, you’re making eye contact with her. Your reflexes are far less than cat-like; there’s no way she didn’t spot you, and after the impression you made you doubt she didn’t recognize you there."
 
@@ -164,4 +182,157 @@ label .meet:
 
             "You shrug. No point in dragging this Lup-talk out any further."
 
+            return
+
+        #~~~~~~~~~~~~~
+
+        label .why:
+            $tmpoints += posAnswer
+
+            mc "If it’s for nerds, what’s someone like you doing here?"
+
+            taako "Cause if there’s a party I {i}have{/i} to be there. Also it’s my major so i sorta need to be."
+
+            mc "Oh that’s cool! Are you going to be in any of the shows this year."
+
+            taako "You know it. Cha’boys a star."
+
+            menu:
+                "{i}Gush about theatre{/i}":
+                    call .gush
+                "Cool!":
+                    call .cool
+
+
+
+
+
+        label .gush:
+                $tmpoints += posAnswer
+                mc "God I just love theatre."
+
+                taako "No shit, huh?"
+
+                mc "Yeah. What have you played in before?"
+
+                taako "Bit parts here and there, best thing to do was Cabaret. I was the emcee."
+
+                mc "Nice. Wish I could have seen that."
+                #taako dismissive, nervous
+                taako "Honestly Lup probably has a bootleg somewhere if you {i}really{/i} want to."
+
+                #cocky look, ears down
+                taako "Of course, it’s {i}me{/i} so why wouldn’t you."
+
+                "He waved me off, changing the subject."
+                return
+
+        label .cool:
+                $tmpoints += neutAnswer
+                mc "Awesome you found something you like, Taako!"
+
+                menu:
+                    "I love my major!":
+                        call .lovemajor
+                    "I'm... {i}meh{/i} about my major.":
+                        call .meh
+                    "I don't like my major.":
+                        call .dontlike
+
+                taako "I dabbled in a few different spots before deciding to do this. I’m already great at transmutation, don’t need to major in that, etcetera, etcetera."
+
+                taako "What can I say, I live for the applause."
+
+                "A small chime rang out from Taako’s side. He dug through his bag and pulled out his cell, his face lighting up while reading his notifications."
+
+                taako "Oh shit, bone boy’s coming through for Taako. You met Krav? He’s pretty cool. Got a lead on something more fun happening, wanna come?"
+
+                menu:
+                    "I wish I could!":
+                        call .iwish
+                    "Parties aren't really my thing.":
+                        call .notmything
+                    "Yeah, no.":
+                        call .yeahno
+
+                return
+
+        label .lovemajor:
+                mc "It took me a bit to find something I settled into well, but I’m glad I did. I really enjoy it."
+                return
+        label .meh:
+                mc "My major’s pretty cool. It’ll do me some good. Wish i was more passionate about it, though."
+                return
+        label .dontlike:
+                mc "To be honest, I wish I liked my major more? Like in the long run it’s a good choice but it isn’t my passion, ya know?"
+                return
+
+        #~~~~~~~
+        label .iwish:
+                $tmpoints += posAnswer
+                mc "I actually have to get going. This wasn’t on my to-do list. Still fun though."
+
+                taako "Plus you got to meet me. That’ll brighten up any day, bubbeleh."
+
+                taako "You run along then. I’ve got a bunch of nerds to hang out with."
+                return
+
+        label .notmything:
+                $tmpoints += posAnswer
+                mc "I appreciate the invite, but parties aren’t exactly my “thing”. I’m only still here cause I’m talking to you, If I’m honest."
+
+                taako "Fair. I am pretty amazing conversation. You go on then. Maybe I’ll see you around."
+
+                mc "I’ll be on the lookout. Bye!"
+                return
+
+        label .dontlike:
+                $tmpoints += negAnswer
+                mc "Yeah, no thanks."
+
+                taako "Oh. Alright. See you alright."
+
+                mc "Bye Taako."
+                return
+
+        #~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        label .yeah:
+            $tmpoints += neutAnswer
+            mc "Yeah you seem like the theatre type."
+
+            taako "What gave me away? Was it the fact I’m simultaneously over and underdressed, or just my aura that says I live for drama."
+
+            #show taako happy
+            "He laughs."
+
+            mc "Both, honestly. You like it though?"
+
+            taako "Hells yeah, man. Why would I be here if I didn’t?"
+
+            mc "Some people just sorta deal if it’ll make ‘em money. Don’t think theatre’s that kinda place though."
+
+            taako "Pfft. No shit."
+
+            "A small chime rang out from Taako’s side. He dug through his bag and pulled out his cell, his face lighting up while reading his notifications."
+
+            taako "Oh shit, bone boy’s coming through for Taako. I gotta run. Ta~!"
+            return
+
+        label .oh:
+            $tmpoints += negAnswer
+
+            mc "That's cool I guess."
+
+            taako "Mhm. If this isn’t your shindig, the door’s thataway my dude."
+
+            mc "Oh, I didn’t mean-"
+
+            taako "Yeah whatever. I’ll call you."
+
+            "Taako turned abruptly and walked through the crowd, plastering a smile across his face and giving a very enthusiastic girl a hug."
+
+            "You wonder if you can salvage that whole thing…"
+
+            "Probably not. You’re better off trying to find your way out of Legato entirely."
             return
