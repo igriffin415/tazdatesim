@@ -1,7 +1,8 @@
 image bg legato_hall = "cab.png"
 image bg merle neutral = "merle neutral.png"
+$trustmerle = False
 
-label merlemeet
+label merlemeet:
 label .meet:
   python:
     points = 0
@@ -51,7 +52,7 @@ menu:
     jump imokay
   "Owww!":
     jump owww
-  "You're a careless fool!"
+  "You're a careless fool!":
     jump careless
 
 label imokay:
@@ -60,11 +61,11 @@ mc "It’s okay.
   But I think you hurt my ankle with that last jump."
   jump looksee
 
-label owww
+label owww:
   "I think you hurt my ankle with that last jump!"
   jump looksee
 
-label careless
+label careless:
   mc "Why weren’t you looking where you were going?
   Why were you dancing the hall in the first place?
   What were you thinking blasting music that loud?"
@@ -80,9 +81,9 @@ label looksee:
 merle "Can I have a look see? I’m an experienced cleric so I could heal that right up for you."
 
 menu:
-  "Show him your ankle"
+  "Show him your ankle":
     $trustmerle = True
-  "Look at him with doubt"
+  "Look at him with doubt":
     $trustmerle = False
 
 label showhim:
@@ -108,11 +109,11 @@ merle: "That one’s on the house on account of me doing the damage."
 merle: "But, say, how did you like that routine I was doing?"
 
 menu:
-  "Tell the truth"
+  "Tell the truth":
   jump zoneoftruth
-  "Downplay what you thought"
+  "Downplay what you thought":
   jump zoneoftruth
-  "Lie"
+  "Lie":
   jump zoneoftruth
   
 label zoneoftruth:
@@ -124,6 +125,7 @@ merle "I’m glad ta hear that! By the way, the name’s Merle Hightower."
 "He chuckles." 
 merle "Yeah, I always mess that up. Hightower is my middle name and Highchurch is my last name." 
 merle "But, what’s your name? I’d love to know who my newest fan is."
+
 menu:
   "Good to meet someone with real talent!"
   jump talent
@@ -131,6 +133,7 @@ menu:
   jump justname
   "You're not a fan."
   jump notafan
+  
 label talent:
   mc "My name is [mcname!t]. It’s nice to meet someone as talented as you, Merle."
   jump finalwords
