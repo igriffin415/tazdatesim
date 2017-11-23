@@ -3,7 +3,7 @@ label lupmeet:
 
 label .meet:
         python:
-            lmpoints = 0 #i /think/ we might be able to say lupmeet.meet.$lmpoints in order to access this from a diff file
+            lmpoints = 0 #to access from diff file, use lmpoints while under python: or $
             posAnswer = 3
             neutAnswer = 0
             negAnswer = -3
