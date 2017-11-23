@@ -64,7 +64,7 @@ label start:
 
     "You’ll probably check that out once you settle into your dorm. Gotta focus on that first."
 
-        #jump lucretiameet.meet
+    call lucretiameet.meet
     call magnusmeet.meet
     return
 
