@@ -69,6 +69,7 @@ label start:
     call lucretiameet.meet
     call magnusmeet.meet
     call taakomeet.meet
+    call merlemeet.meet
     return
 
 label nameChara:
