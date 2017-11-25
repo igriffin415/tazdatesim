@@ -1,11 +1,8 @@
-image bg legato_hall = "cab.png"
-image bg merle neutral = "merle neutral.png"
-$ trustmerle = False
-
 label merlemeet:
-    label .meet:
+    $ trustmerle = False
+label .meet:
         python:
-            points = 0
+            mermpoints = 0
             posAnswer = 3
             neutAnswer = 0
             negAnswer = -3
@@ -58,14 +55,17 @@ label merlemeet:
                     jump .careless
 
             label .imokay:
+                $ mermpoints += posAnswer
                 mc "It’s okay.{w} I know what it's like to get caught up in something.{w} But I think you hurt my ankle with that last jump."
                 jump .looksee
 
             label .owww:
-                "I think you hurt my ankle with that last jump!"
+                $ mermpoints += neutAnswer
+                mc "I think you hurt my ankle with that last jump!"
                 jump .looksee
 
             label .careless:
+                $ mermpoints += negAnswer
                 mc "Why weren’t you looking where you were going?{w} Why were you dancing the hall in the first place?{w} What were you thinking blasting music that loud?"
                 mc "You messed up my ankle but if I hadn’t jumped out of the way you could have hurt me much worse."
                 mc "I can’t believe someone as old as you would do this!"
@@ -86,10 +86,12 @@ label merlemeet:
             label .showhim:
                 "Without pause, you stick your foot out so he can inspect your ankle."
                 $ trustmerle = True
+                $ mermpoints += posAnswer
                 jump .checkup
             label .doubt:
                 "You shoot him an incredulous look but, after a moment, show him your ankle anyway.{w} You hope he is actually as experienced as he says he is."
                 $ trustmerle = False
+                $ mermpoints += negAnswer
                 jump .checkup
 
             label .checkup:
@@ -110,10 +112,13 @@ label merlemeet:
 
                 menu:
                     "Tell the truth":
+                        $ mermpoints += posAnswer
                         jump .zoneoftruth
                     "Downplay what you thought":
+                        $ mermpoints += neutAnswer
                         jump .zoneoftruth
                     "Lie":
+                        $ mermpoints += negAnswer
                         jump .zoneoftruth
 
             label .zoneoftruth:
@@ -135,12 +140,15 @@ label merlemeet:
                         jump .notafan
 
             label .talent:
+                $ mermpoints += posAnswer
                 mc "My name is [mcname!t]. It’s nice to meet someone as talented as you, Merle."
                 jump .finalwords
             label .justname:
+                $ mermpoints += neutAnswer
                 mc "My name is [mcname!t], but I don’t know if I’m really a fan yet."
                 jump .finalwords
             label .notafan:
+                $ mermpoints += negAnswer
                 mc "I’m not really a fan, but my name is [mcname!t]."
                 merle "Well, we’ll have to change that! You just need to see more of my work."
                 jump .finalwords
@@ -157,6 +165,7 @@ label merlemeet:
                 "You sit there in stunned silence for a moment."
                 "You wonder how such an old man can have more energy and flexibility than you."
                 "You stand up, dust yourself off, and decide where to head to next."
+                "You have [points] Merle points."
                 return
 
         label .ignore:
