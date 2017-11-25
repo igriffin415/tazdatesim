@@ -165,7 +165,7 @@ label .meet:
                 "You sit there in stunned silence for a moment."
                 "You wonder how such an old man can have more energy and flexibility than you."
                 "You stand up, dust yourself off, and decide where to head to next."
-                "You have [points] Merle points."
+                "You have [mermpoints] Merle points."
                 return
 
         label .ignore:
