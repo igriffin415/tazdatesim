@@ -129,9 +129,9 @@ label .meet:
 
                 $points += neutAnswer
 
-                mcname "Maybe I'll see you around campus."
+                mcname "I gotta go, maybe I'll see you around campus."
 
-                "She looks up from the hanful of books she's collected already and gives you a polite smile."
+                "She looks up from the handful of books she's collected already and gives you a polite smile."
 
                 unknown "Maybe you will."
 

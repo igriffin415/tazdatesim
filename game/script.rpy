@@ -2,6 +2,7 @@
 
 init:
     $ mcname = ""
+    $ mcmajor = ""
 
     # IPRE
     define taako = Character("Taako")
@@ -25,7 +26,7 @@ label start:
     call nameChara
     #bg: cab interior
     #sprite: none
-
+    call davenportmeet.meet
     scene bg cab with dissolve
     # show merle neutral at right
 
@@ -69,6 +70,7 @@ label start:
     call lucretiameet.meet
     call magnusmeet.meet
     call taakomeet.meet
+    call davenportmeet.meet
     return
 
 label nameChara:
@@ -76,4 +78,6 @@ label nameChara:
     $ mcname = renpy.input("What is your name?")
     $ mcname = mcname.strip()
     define mc = Character("[mcname]")
+    $ mcmajor = renpy.input("What is your major?")
+    $ mcmajor = mcmajor.strip()
     return

@@ -196,7 +196,7 @@ label .meet:
 
             mc "If it’s for nerds, what’s someone like you doing here?"
 
-            taako "Cause if there’s a party I {i}have{/i} to be there. Also it’s my major so i sorta need to be."
+            taako "Cause if there’s a party I {i}have{/i} to be there. Also it’s my major so I sorta need to be."
 
             mc "Oh that’s cool! Are you going to be in any of the shows this year."
 
@@ -265,13 +265,13 @@ label .meet:
                 return
 
         label .lovemajor:
-                mc "It took me a bit to find something I settled into well, but I’m glad I did. I really enjoy it."
+                mc "It took me a bit to find something I settled into well, but I’m glad I did. I'm taking [mcmajor], and I really enjoy it."
                 return
         label .meh:
-                mc "My major’s pretty cool. It’ll do me some good. Wish i was more passionate about it, though."
+                mc "My major’s pretty cool. [mcmajor] will do me some good. Wish I was more passionate about it, though."
                 return
         label .dontlike:
-                mc "To be honest, I wish I liked my major more? Like in the long run it’s a good choice but it isn’t my passion, ya know?"
+                mc "To be honest, I wish I liked my major more? Like in the long run [mcmajor] is a good choice but it isn’t my passion, ya know?"
                 return
 
         #~~~~~~~
@@ -288,7 +288,7 @@ label .meet:
                 $tmpoints += posAnswer
                 mc "I appreciate the invite, but parties aren’t exactly my “thing”. I’m only still here cause I’m talking to you, If I’m honest."
 
-                taako "Fair. I am pretty amazing conversation. You go on then. Maybe I’ll see you around."
+                taako "Yeah, that tracks. I am a pretty amazing conversationalist. You go on then. Maybe I’ll see you around."
 
                 mc "I’ll be on the lookout. Bye!"
                 return
