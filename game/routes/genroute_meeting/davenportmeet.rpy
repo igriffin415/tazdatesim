@@ -456,4 +456,7 @@ label .meet:
 
             "You toss a blanket over yourself, not bothering to change your clothes before closing your eyes and letting your breathing slow down."
 
+            #for debugging
+            "You have %(dmpoints)d points"
+
             return
