@@ -5,7 +5,7 @@ $trustmerle = False
 label merlemeet:
     label .meet:
         python:
-            points = 0
+            mempoints = 0
             posAnswer = 3
             neutAnswer = 0
             negAnswer = -3

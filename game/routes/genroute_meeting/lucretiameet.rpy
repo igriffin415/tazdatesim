@@ -3,7 +3,7 @@ label lucretiameet:
 
 label .meet:
     python:
-            points = 0
+            lcmpoints = 0
             posAnswer = 3
             neutAnswer = 0
             negAnswer = -3
@@ -26,7 +26,7 @@ label .meet:
 
     label .apologize:
 
-        $points += posAnswer
+        $lcmpoints += posAnswer
 
         mcname "I'm so sorry! I wasn't looking where I was going and ran right into you!"
 
@@ -37,7 +37,7 @@ label .meet:
 
     label .blame:
 
-        $points += negAnswer
+        $lcmpoints += negAnswer
 
         mcname "Watch where you're going!"
 
@@ -54,7 +54,7 @@ label .meet:
 
     label .acceptApology:
 
-        $points += negAnswer
+        $lcmpoints += negAnswer
 
         mcname "You should be sorry."
 
@@ -74,7 +74,7 @@ label .meet:
 
         label .attemptHelp:
 
-            $points += negAnswer
+            $lcmpoints += negAnswer
 
             "You reach down to pick up one of the many books scattered across the walkway."
 
@@ -89,7 +89,7 @@ label .meet:
 
             label .leave:
 
-                $points += negAnswer
+                $lcmpoints += negAnswer
 
                 "You nod, step lightly over the books, and continue towards the buildings before you."
 
@@ -107,7 +107,7 @@ label .meet:
 
             label .askIfAlright:
 
-                $points += posAnswer
+                $lcmpoints += posAnswer
 
                 mcname "Is your nose okay?"
 
@@ -127,7 +127,7 @@ label .meet:
 
             label .sayGoodbye:
 
-                $points += neutAnswer
+                $lcmpoints += neutAnswer
 
                 mcname "I gotta go, maybe I'll see you around campus."
 
@@ -149,7 +149,7 @@ label .meet:
 
             label .offerHelp:
 
-                $points += posAnswer
+                $lcmpoints += posAnswer
 
                 mcname "Please, let me help you with those!"
 
@@ -163,7 +163,7 @@ label .meet:
 
             label .insistHelp:
 
-                $points += posAnswer
+                $lcmpoints += posAnswer
 
                 mcname "I was heading towards the library anyway. It would be no trouble at all."
 
@@ -184,7 +184,7 @@ label .meet:
                         jump .sayNothing
             label .askName:
 
-                $points += posAnswer
+                $lcmpoints += posAnswer
 
                 mcname "Excuse me, but I didn't catch your name."
 
@@ -204,7 +204,7 @@ label .meet:
 
             label .introduceSelf:
 
-                $points += neutAnswer
+                $lcmpoints += neutAnswer
 
                 mcname "By the way, my name is [mcname]."
 
@@ -218,7 +218,7 @@ label .meet:
 
             label .sayNothing:
 
-                $points += neutAnswer
+                $lcmpoints += neutAnswer
 
                 "The two of you pick up the last couple books before walking toward the library in awkward silence."
 
@@ -255,7 +255,7 @@ label .meet:
 
             label .askJellyfish:
 
-                $points += posAnswer
+                $lcmpoints += posAnswer
 
                 mcname "Whoa, jellyfish! Those little guys are neat."
 
@@ -279,7 +279,7 @@ label .meet:
 
             label .askMore:
 
-                $points += posAnswer
+                $lcmpoints += posAnswer
 
                 mcname "No, no, no, that sounds incredible! I'd love to learn more."
 
@@ -314,7 +314,7 @@ label .meet:
 
             label .agreeWith:
 
-                $points += neutAnswer
+                $lcmpoints += neutAnswer
 
                 "You laugh and agree."
 
@@ -333,7 +333,7 @@ label .meet:
 
             label .askLibrary:
 
-                $points += neutAnswer
+                $lcmpoints += neutAnswer
 
                 mcname "Do you spend a lot of time studying here?"
 
@@ -358,8 +358,8 @@ label .meet:
 
                 jump .leaveLucretia
 
-            label .leaveLucretia: #just to make sure points are working properly, can be removed later
+            label .leaveLucretia: #just to make sure lcmpoints are working properly, can be removed later
 
-                "You have %(points)d points"
+                "You have %(lcmpoints)d lcmpoints"
 
                 return
