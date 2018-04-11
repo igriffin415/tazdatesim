@@ -26,11 +26,13 @@ label start:
     call nameChara
     #bg: cab interior
     #sprite: none
+
     call davenportmeet.meet
+
     scene bg cab with dissolve
     # show merle neutral at right
 
-    mc "Well. This is it I guess. First week at COLLEGE NAME? Let's make it a good one."
+    mc "Well. This is it I guess. First week at COLLEGE NAME? Let's make it a good one." #REPLACE w school name
 
     "The cab driver looks at you funny in her mirror as you insert your card into the machine to pay for the ride. {i}Guess I started my internal monologue out loud,{/i} you think to yourself."
 
