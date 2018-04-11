@@ -1,5 +1,6 @@
 
 label lucretiameet:
+    $knowLucName = False;
 
 label .meet:
     python:
@@ -88,7 +89,6 @@ label .meet:
                     jump .leave
 
             label .leave:
-
                 $lcmpoints += negAnswer
 
                 "You nod, step lightly over the books, and continue towards the buildings before you."
@@ -164,6 +164,8 @@ label .meet:
             label .insistHelp:
 
                 $lcmpoints += posAnswer
+
+                $knowLucName = True;
 
                 mcname "I was heading towards the library anyway. It would be no trouble at all."
 
