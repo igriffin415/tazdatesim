@@ -79,8 +79,15 @@ label start:
 
 label nameChara:
     scene bg black
-    $ mcname = renpy.input("What is your name?")
-    $ mcname = mcname.strip()
+    python:
+        ipre  = ["Lup", "Taako", "Barry", "Davenport","Merle","Lucretia","Magnus"]
+        mcname = "Lup"
+        while mcname in ipre:
+            mcname = renpy.input("What is your name?")
+            mcname = mcname.strip()
+            if mcname in ipre:
+                renpy.say(narrator, "Sorry, you can't have that name.")
+
     define mc = Character("[mcname]")
     $ mcmajor = renpy.input("What is your major?")
     $ mcmajor = mcmajor.strip()
