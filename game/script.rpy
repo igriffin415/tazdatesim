@@ -72,7 +72,11 @@ label start:
     call lucretiameet.meet
     call magnusmeet.meet
     call taakomeet.meet
+<<<<<<< HEAD
     call davenportmeet.meet
+=======
+    call merlemeet.meet
+>>>>>>> merle-intros
     return
 
 label nameChara:

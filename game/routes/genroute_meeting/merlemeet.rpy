@@ -1,11 +1,8 @@
-image bg legato_hall = "cab.png"
-image bg merle neutral = "merle neutral.png"
-$trustmerle = False
-
 label merlemeet:
-    label .meet:
+    $ trustmerle = False
+label .meet:
         python:
-            mempoints = 0
+            mermpoints = 0
             posAnswer = 3
             neutAnswer = 0
             negAnswer = -3
@@ -13,7 +10,7 @@ label merlemeet:
         #bg: legato hall
         #sprite: merle neutral
 
-        scene bg cab
+        scene bg legato_hall
         with fade
 
         "You wander aimlessly through Legato Hall."
@@ -33,12 +30,14 @@ label merlemeet:
             "You spot an older dwarven man at the end of the hallway."
 
             show merle neutral at right
+            with moveinright
 
             "He is quickly approaching you, executing numerous spinning and kicking dance moves that all seem to be extremely technical in nature."
             "You are so enthralled by his dance that you only notice at the very last minute he is going to run you down, still kicking and spinning in time with the music."
             "You dive out of the way just as he performs a large jump, his trailing foot making him trip over your ankle."
 
-            # hpunch
+            show merle neutral at right
+            with hpunch
 
             "You groan in agony and grab your ankle."
             "The music screeches to a halt and you watch the man feel around for the thick glasses that fell off his face in the jump."
@@ -56,19 +55,18 @@ label merlemeet:
                     jump .careless
 
             label .imokay:
-                mc "It’s okay."
-                "I know what it's like to get caught up in something."
-                "But I think you hurt my ankle with that last jump."
+                $ mermpoints += posAnswer
+                mc "It’s okay.{w} I know what it's like to get caught up in something.{w} But I think you hurt my ankle with that last jump."
                 jump .looksee
 
             label .owww:
-                "I think you hurt my ankle with that last jump!"
+                $ mermpoints += neutAnswer
+                mc "I think you hurt my ankle with that last jump!"
                 jump .looksee
 
             label .careless:
-                mc "Why weren’t you looking where you were going?
-                Why were you dancing the hall in the first place?
-                What were you thinking blasting music that loud?"
+                $ mermpoints += negAnswer
+                mc "Why weren’t you looking where you were going?{w} Why were you dancing the hall in the first place?{w} What were you thinking blasting music that loud?"
                 mc "You messed up my ankle but if I hadn’t jumped out of the way you could have hurt me much worse."
                 mc "I can’t believe someone as old as you would do this!"
 
@@ -81,16 +79,19 @@ label merlemeet:
                 merle "Can I have a look see? I’m an experienced cleric so I could heal that right up for you."
                 menu:
                     "Show him your ankle":
-                        $trustmerle = True
+                        jump .showhim
                     "Look at him with doubt":
-                        $trustmerle = False
+                        jump .doubt
 
             label .showhim:
                 "Without pause, you stick your foot out so he can inspect your ankle."
+                $ trustmerle = True
+                $ mermpoints += posAnswer
                 jump .checkup
             label .doubt:
-                "You shoot him an incredulous look but, after a moment, show him your ankle anyway.
-                You hope he is actually as experienced as he says he is."
+                "You shoot him an incredulous look but, after a moment, show him your ankle anyway.{w} You hope he is actually as experienced as he says he is."
+                $ trustmerle = False
+                $ mermpoints += negAnswer
                 jump .checkup
 
             label .checkup:
@@ -111,10 +112,13 @@ label merlemeet:
 
                 menu:
                     "Tell the truth":
+                        $ mermpoints += posAnswer
                         jump .zoneoftruth
                     "Downplay what you thought":
+                        $ mermpoints += neutAnswer
                         jump .zoneoftruth
                     "Lie":
+                        $ mermpoints += negAnswer
                         jump .zoneoftruth
 
             label .zoneoftruth:
@@ -136,21 +140,22 @@ label merlemeet:
                         jump .notafan
 
             label .talent:
+                $ mermpoints += posAnswer
                 mc "My name is [mcname!t]. It’s nice to meet someone as talented as you, Merle."
                 jump .finalwords
             label .justname:
+                $ mermpoints += neutAnswer
                 mc "My name is [mcname!t], but I don’t know if I’m really a fan yet."
                 jump .finalwords
             label .notafan:
+                $ mermpoints += negAnswer
                 mc "I’m not really a fan, but my name is [mcname!t]."
                 merle "Well, we’ll have to change that! You just need to see more of my work."
                 jump .finalwords
 
             label .finalwords:
                 "He smiles jovially."
-                merle "It’s always good to see a new face and it’s nice to meet you too, [mcname!t]!"
-                "What brings you to the Legato building anyway?"
-                "Anything you need help with?"
+                merle "It’s always good to see a new face and it’s nice to meet you too, [mcname!t]!{w} What brings you to the Legato building anyway?{w} Anything you need help with?"
                 mc "I was wandering around and was intrigued by the music you had on so I followed the sound of it."
                 merle "Well I’m glad somebody on this damned campus appreciates the music I dance to!"
                 "He chuckles."
@@ -160,6 +165,7 @@ label merlemeet:
                 "You sit there in stunned silence for a moment."
                 "You wonder how such an old man can have more energy and flexibility than you."
                 "You stand up, dust yourself off, and decide where to head to next."
+                "You have [mermpoints] Merle points."
                 return
 
         label .ignore:
