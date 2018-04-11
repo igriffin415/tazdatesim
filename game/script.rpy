@@ -27,7 +27,7 @@ label start:
     #bg: cab interior
     #sprite: none
 
-    #call davenportmeet.meet
+    call barrymeet.meet
 
     scene bg cab with dissolve
     # show merle neutral at right
