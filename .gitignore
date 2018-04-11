@@ -1,5 +1,11 @@
 **/*.rpyc
 **/*.rpyb
 log.txt
+
 game/saves/**
+
+game/saves/*.save
+game/saves/persistent
+errors.txt
+traceback.txt
 
