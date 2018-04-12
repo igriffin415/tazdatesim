@@ -33,6 +33,7 @@ label .meet:
         "You have better things to do":
             $knowBarryName = False
             $bmpoints += negAnswer
+            "He’s probably just another poor freshman trying to take on too much. Good luck, bud. See you in library hell during Finals."
             jump .leave
 label .approach:
     $bmpoints += posAnswer
@@ -99,7 +100,7 @@ label .needHelp:
     mc "It was no problem."
     mc " You got a name, or do you want me to call you book boy?"
     barry "Oh shit I forgot. My name’s Barry, and yours is…?"
-    mc "It's [mcname]"
+    mc "It's [mcname]."
     barry "[mcname], I’ll see you around."
     "Barry just… leaves without saying another word. You didn’t even get his last name and who knows how many Barry’s there are at this university."
     "You’d probably be able to find him pretty easily just based off what you’ve seen of him. Memorable guy to say the least."
@@ -160,7 +161,7 @@ label .converse:
     unknown "Of course you are."
     mc " You got a name, or do you want me to call you book boy?"
     barry "Oh shit I forgot. My name’s Barry, and yours is…?"
-    mc "It's [mcname]"
+    mc "It's [mcname]."
     barry "[mcname], I’ll see you around."
     "Barry just… leaves without saying another word. You didn’t even get his last name and who knows how many Barry’s there are at this university."
     "… Probably not many. He seems pretty wierd."
