@@ -78,11 +78,13 @@ label nameChara:
     python:
         ipre  = ["Lup", "Taako", "Barry", "Davenport","Merle","Lucretia","Magnus"]
         mcname = "Lup"
-        while mcname in ipre:
+        while mcname in ipre or len(mcname) > 10:
             mcname = renpy.input("What is your name?")
-            mcname = mcname.strip()
+            mcname = mcname.strip().title()
             if mcname in ipre:
                 renpy.say(narrator, "Sorry, you can't have that name.")
+            if len(mcname) > 10:
+                renpy.say(narrator, "Sorry, that name's too long.")
 
     define mc = Character("[mcname]")
     $ mcmajor = renpy.input("What is your major?")
