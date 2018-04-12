@@ -34,13 +34,13 @@ label .meet:
 
         menu:
 
-            "{i}Fight{/i}":
+            "Fight":
                 call .fight
 
-            "{i}Flight{/i}":
+            "Flight":
                 call .flight
 
-            "{i}Freak out{/i}":
+            "Freak out":
                 call .freak
 
         show steven neutral at left with easeinleft
@@ -77,22 +77,22 @@ label .meet:
         if(wtf):
             menu:
 
-                "{i}Tell him.{/i}":
+                "Tell him.":
                     call .tellname
 
-                "{i}No way!{/i}":
+                "No way!":
                     call .noname
 
         else:
             menu:
 
-                "{i}Tell him.{/i}":
+                "Tell him.":
                     call .tellname
 
-                "{i}No way!{/i}":
+                "No way!":
                     call .noname
 
-                "{i}Health and Safety Inspector{/i}":
+                "Health and Safety Inspector":
                     call .inspector
 
         magnus "Nice to meet you, [mcname]! I haven’t seen you around here before, are you a new student? You interested in woodworking at all?"
@@ -118,13 +118,13 @@ label .meet:
         #move menu to center
         menu:
 
-            "{i}Go in for a fistbump.{/i}":
+            "Go in for a fistbump.":
                 call .bump
 
-            "{i}Shake her hand.{/i}":
+            "Shake her hand.":
                 call .shake
 
-            "{i}Don't take her hand.{/i}":
+            "Don't take her hand.":
                 call .noshake
 
         julia "I should probably get back to work. You know how it is, those deadlines sneak up on ya!"

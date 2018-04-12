@@ -33,7 +33,7 @@ label .meet:
         menu:
             "I'm alright.":
                 call .alright
-            "{i}Flip off.{/i}":
+            "Flip off.":
                 call .flipoff
 
         unknown "Sorry about that. I was running errands preparing for the new school year and wasn't watching where I was going. Here, let me help you."
@@ -41,23 +41,23 @@ label .meet:
         "He picks up your textbooks from where they fell, brushing off pieces of dirt as he does so. He hands the stack back to you."
 
         menu:
-            "{i}Accept apology.{/i}":
+            "Accept apology.":
                 call .accept
-            "{i}Grab them and glare.{/i}":
+            "Grab them and glare.":
                 call .glare
 
         menu:
-            "{i}Accept his help.{/i}":
+            "Accept his help.":
                 call .accepthelp
-            "{i}Decline graciously.{/i}":
+            "Decline graciously.":
                 call .gracious
-            "{i}Decline ungraciously.{/i}":
+            "Decline ungraciously.":
                 call .ungracious
 
         menu:
-            "{i}Excitedly describe major.{/i}":
+            "Excitedly describe major.":
                 call .excite
-            "{i}Just say the name of it.{/i}":
+            "Just say the name of it.":
                 call .namemajor
             "It’s nothing stupid like botany or illusion.":
                 call .stupid
@@ -154,9 +154,9 @@ label .meet:
             unknown "That’s fair considering what happened. Once again, I apologize. No matter how good a bike rider I am, that does not mean I can be negligent in looking out for everyone around me."
 
             menu:
-                "{i}Accept his apology.{/i}":
+                "Accept his apology.":
                     call .accept2
-                "{i}Scoff.{/i}":
+                "Scoff.":
                     jump .scoff #this choice causes the scene to end early
             return
 
@@ -218,7 +218,7 @@ label .meet:
             menu:
                 "That's my dorm!":
                     call .mydorm
-                "{i}Roll: Deception. Crit Fail.{/i}":
+                "Roll: Deception. Crit Fail.":
                     call .fail
 
             #call .gracious
@@ -252,7 +252,7 @@ label .meet:
             menu:
                 "That's my dorm!":
                     call .mydorm
-                "{i}Roll: Deception. Crit Fail.{/i}":
+                "Roll: Deception. Crit Fail.":
                     call .fail
 
 
@@ -291,9 +291,9 @@ label .meet:
             dav "Ok then? I’m Davenport, the RA for the IPRE Dorm."
 
             menu:
-                "{i}Introduce yourself.{/i}":
+                "Introduce yourself.":
                     call .intro
-                "{i}Be rude.{/i}":
+                "Be rude.":
                     call .rude
 
             return
@@ -386,11 +386,11 @@ label .meet:
         label .party:
 
             menu:
-                "{i}Enthusiastic agreement.{/i}":
+                "Enthusiastic agreement.":
                     call .enthuse
-                "{i}Normal agreement.{/i}":
+                "Normal agreement.":
                     call .normal
-                "{i}Not sure.{/i}":
+                "Not sure.":
                     call .idk
                 "What is this? Fucking grade school?":
                     call .gradeschool

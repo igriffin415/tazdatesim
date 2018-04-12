@@ -22,7 +22,7 @@ label .meet:
 
         "You turn a couple corners here and there, letting yourself get pretty lost when suddenly you’re swept up in a literal sea of people. What the hell is this?"
 
-        "You try to escape but you’re helpless to do anything but go with the flow and walk with them. Surely they’ll stop somewhere and you can find your way back to your dorm. You’ve probably had enough of {i}whatever{/i} this is for one day."
+        "You try to escape but you’re helpless to do anything but go with the flow and walk with them. Surely they’ll stop somewhere and you can find your way back to your dorm. You’ve probably had enough of {i}whatever this is{/i} for one day."
 
         "You finally stumble to a stop in an auditorium, and the crowd disperses around you, joining the others already here, chatting and eating snacks. Some kind of party? A mixer."
 
@@ -98,11 +98,11 @@ label .meet:
             taako "Is she still looking for Greg? Gods, I told her to leave him and just fill his car with gogurt. Teach the shit a lesson."
 
             menu:
-                "{i}Laugh{/i}":
+                "Laugh":
                     call .laugh
-                "{i}Agree{/i}":
+                "Agree":
                     call .agree
-                "{i}Disagree{/i}":
+                "Disagree":
                     call .disagree
 
 
@@ -203,7 +203,7 @@ label .meet:
             taako "You know it. Cha’boys a star."
 
             menu:
-                "{i}Gush about theatre.{/i}":
+                "Gush about theatre.":
                     call .gush
                 "Cool!":
                     call .cool

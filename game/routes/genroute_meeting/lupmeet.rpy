@@ -88,10 +88,10 @@ label .meet:
 
                 menu:
 
-                    "{i}Ignore the comment.{/i}":
+                    "Ignore the comment.":
                         jump .ignore
 
-                    "{i}Flirt back.{/i}":
+                    "Flirt back.":
                         jump .flirt
 
                 label .ignore:
