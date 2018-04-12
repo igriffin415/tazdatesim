@@ -27,8 +27,6 @@ label start:
     #bg: cab interior
     #sprite: none
 
-    call barrymeet.meet
-
     scene bg cab with dissolve
     # show merle neutral at right
 
@@ -55,8 +53,6 @@ label start:
 
     #after all lup meeting choices
 
-    # label finddorm:
-
     "Where {i}was{/i} your dorm? You study it carefully before folding it gently and sticking it into your jacket pocket for easy access."
 
     "You’ll definitely need to look over it at least two more times."
@@ -73,7 +69,7 @@ label start:
     call magnusmeet.meet
     call taakomeet.meet
     call merlemeet.meet
-    # barry
+    call barrymeet.meet
     call davenportmeet.meet
     return
 
