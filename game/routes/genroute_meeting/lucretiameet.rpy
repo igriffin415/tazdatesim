@@ -81,7 +81,7 @@ label .meet:
 
             "Her hand snaps out and grabs the book out from under your hand."
 
-            unknown "I'm sure you have important places to be going. I wouldn't want to cause you any dely."
+            unknown "I'm sure you have important places to be going. I wouldn't want to cause you any delay."
 
             menu:
 
@@ -95,13 +95,15 @@ label .meet:
 
                 hide lucretia neutral
 
-                "You probably don’t want to meet up with that book lady again, so you ought to change your destination. Instead, you wander into Roost Hall. The place seems interesting; lots of people are walking in and out."
+                "You probably don’t want to meet up with that book lady again, so you ought to change your destination."
+                #Instead, you wander into Roost Hall. The place seems interesting; lots of people are walking in and out."
+                #scene bg hallway with dissolve
 
-                "The hall is well lit and warm, decorated with a variety of wood, metal and stone art pieces. There are quite a few people bustling up and down the corridor, entering rooms that are alive with laughter and creation."
+                #"The hall is well lit and warm, decorated with a variety of wood, metal and stone art pieces. There are quite a few people bustling up and down the corridor, entering rooms that are alive with laughter and creation."
 
-                "The building seems to be home to a variety of trades, from the signs: metalworking, carpentry, electrics...the list goes on."
+                #"The building seems to be home to a variety of trades, from the signs: metalworking, carpentry, electrics...the list goes on."
 
-                "As you look around, a sudden buzzing catches your attention. Curiosity gets the better of you as you gently push open the classroom door."
+                #"As you look around, a sudden buzzing catches your attention. Curiosity gets the better of you as you gently push open the classroom door."
 
                 jump .leaveLucretia #replace with magnusmeet
 
@@ -139,11 +141,13 @@ label .meet:
 
                 "You step around the remaining books and head forward. You’re sure she’s heading to the library next and that would be an awkward encounter for sure. You should probably change your destination."
 
-                "You wander into roost hall. The place seems interesting; lots of people are walking in and out."
+                #"You wander into roost hall. The place seems interesting; lots of people are walking in and out."
+                #scene bg hallway with dissolve
 
-                "The hall is well lit and warm, decorated with a variety of wood, metal and stone art pieces. There are quite a few people bustling up and down the corridor, entering rooms that are alive with laughter and creation. The building seems to be home to a variety of trades, from the signs: metalworking, carpentry, electrics...the list goes on."
+                #"The hall is well lit and warm, decorated with a variety of wood, metal and stone art pieces. There are quite a few people bustling up and down the corridor, entering rooms that are alive with laughter and creation."
+#                "The building seems to be home to a variety of trades, from the signs: metalworking, carpentry, electrics...the list goes on."
 
-                "As you look around, a sudden buzzing catched your attention. Curiosity gets the better of you as you gently push open the classroom door."
+#                "As you look around, a sudden buzzing catches your attention. Curiosity gets the better of you as you gently push open the classroom door."
 
                 jump .leaveLucretia
 
@@ -239,9 +243,11 @@ label .meet:
                 jump .lucretiaUnite
 
             label .lucretiaUnite:
+                scene bg library with dissolve
                 "It's a beautiful sight."
 
-                "Shelves rise up high into the air, decorated sliding ladders acting as the only way to reach some of the higher ones. Sunlight filters in from skylights on the ceiling. There are alcoves hidden in the curves of the walls with elegant carving curling all along the arch of their openings."
+                "Shelves rise up high into the air, decorated sliding ladders acting as the only way to reach some of the higher ones. Sunlight filters in from skylights on the ceiling."
+                "There are alcoves hidden in the curves of the walls with elegant carving curling all along the arch of their openings."
 
                 "Lucretia nudges your arm, dragging you back to the present."
 
@@ -263,7 +269,7 @@ label .meet:
 
                 "Lucretia beams."
 
-                lucretia "They sure are. I work in Dr.PROFESSOR's lab so I have a lot of reading to do about them."
+                lucretia "They sure are. I work in Dr.PROFESSOR's lab so I have a lot of reading to do about them." #REPLACE
 
                 mcname "That's so cool! What do you study?"
 
@@ -285,7 +291,7 @@ label .meet:
 
                 mcname "No, no, no, that sounds incredible! I'd love to learn more."
 
-                "Lucretia grins."
+                "Lucretia grins." #show lucretia happy?
 
                 lucretia "Let me find you my favorite jellyfish book then! It's a bit long but it's {i}facinating{/i}."
 
@@ -310,7 +316,7 @@ label .meet:
                 mcname "See you!"
 
                 hide lucretia neutral with dissolve
-                "Lucretia waves and darts off into the depths of the library again"
+                "Lucretia waves and darts off into the depths of the library again."
 
                 jump .leaveLucretia
 
@@ -329,7 +335,7 @@ label .meet:
                 mcname "See you!"
 
                 hide lucretia neutral with dissolve
-                "Lucretia waves and darts off into the depths of the library again"
+                "Lucretia waves and darts off into the depths of the library again."
 
                 jump .leaveLucretia
 
@@ -351,7 +357,7 @@ label .meet:
 
                 "Lucretia fidgets with a bookmark on the counter nearby."
 
-                "An awkward silence is imminent"
+                "An awkward silence is imminent."
 
                 mcname "I guess I'll see you around then!"
 

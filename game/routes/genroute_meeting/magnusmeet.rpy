@@ -11,7 +11,8 @@ label .meet:
         #bg library hallway
         scene bg hallway with dissolve
 
-        "Lucretia sure was something. Smart, but kinda reserved? You wonder to yourself what it might take to get her out of her shell a bit, but a sudden buzzing coming from Roost Hall distracts you."
+        #"Lucretia sure was something. Smart, but kinda reserved? You wonder to yourself what it might take to get her out of her shell a bit,
+        "You start to wander away, but a sudden buzzing coming from Roost Hall distracts you."
 
         "It fades suddenly. It was coming from Roost Hall? The place seems interesting; lots of people are walking in and out. The hall is well lit and warm, decorated with a variety of wood, metal and stone art pieces."
 
