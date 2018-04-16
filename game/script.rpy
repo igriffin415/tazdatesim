@@ -32,7 +32,7 @@ label start:
 
     mc "Well. This is it I guess. First week at COLLEGE NAME? Let's make it a good one." #REPLACE w school name
 
-    "The cab driver looks at you funny in her mirror as you insert your card into the machine to pay for the ride. {i}Guess I started my internal monologue out loud,{/i} you think to yourself."
+    "The cab driver looks at you funny in his mirror as you insert your card into the machine to pay for the ride. {i}Guess I started my internal monologue out loud,{/i} you think to yourself."
 
     "Sometimes shit happens. Sometimes that shit involves moving across the country and transferring all your credits to a brand new school to finish your degree."
 
